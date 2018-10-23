@@ -3,18 +3,17 @@ layout: default
 title: geishaboy.tf
 testing: yo
 geishas:
-  collected:
-    - {name: "Burning flames", img: "https://backpack.tf/images/440/particles/13_380x380.png"}
-    - {name: "Frostbite", img: "https://backpack.tf/images/440/particles/87_380x380.png"}
-  buying:
-    - {name: "Demonflame", price: 150}
-    - {name: "Demonflame", price: 150}
+  - {name: "Burning flames", img: "https://backpack.tf/images/440/particles/13_380x380.png"}
+  - {name: "Frostbite", img: "https://backpack.tf/images/440/particles/87_380x380.png"}
+  - {name: "Demonflame", img: "https://backpack.tf/images/440/particles/80_380x380.png", price: 150}
+  - {name: "Knifestorm", img: "https://backpack.tf/images/440/particles/43_380x380.png", price: 150}
 ---
-<li>TEST</li>
-<li>{{ page.testing }}</li>
-{% for geisha in page.geishas.collected %}
-  <li class="collected">
+{% for geisha in page.geishas %}
+  <li {% unless geisha.price %}class="collected"{% endunless %}>
     <div class="geisha-image" style="background: url(https://wiki.teamfortress.com/w/images/e/eb/BLU_Geisha_Boy.png), url({{ geisha.img }});"></div>
     <span class="effect-name">{{ geisha.name }}</span>
+    {% if geisha.price %}
+      <span class="buying-price">{{ geisha.price }}</span>
+    {% endif %}
   </li>
 {% endfor %}
