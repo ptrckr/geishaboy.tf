@@ -1,6 +1,7 @@
 ---
 layout: default
 title: geishaboy.tf
+testing: yo
 geishas:
   collected:
     - {name: "Burning flames"}
@@ -10,6 +11,7 @@ geishas:
     - {name: "Demonflame", price: 150}
 ---
 <li>TEST</li>
-{% for geisha in page.geishas.collected %}
-  <li>{{ geisha.name }}</li>
+<li>{{ page.testing }}</li>
+{% for a in page.geishas.collected %}
+  <li>{{ a.name }}</li>
 {% endfor %}
