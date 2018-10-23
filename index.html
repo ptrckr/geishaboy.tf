@@ -2,13 +2,14 @@
 layout: default
 title: geishaboy.tf
 geishas:
-- collected:
-  - {name: "Burning flames"}
-  - {name: "Frostbite"}
-- buying:
-  - {name: "Demonflame", price: 150}
-  - {name: "Demonflame", price: 150}
+  collected:
+    - {name: "Burning flames"}
+    - {name: "Frostbite"}
+  buying:
+    - {name: "Demonflame", price: 150}
+    - {name: "Demonflame", price: 150}
 ---
+<li>TEST</li>
 {% for geisha in site.index.geishas.collected %}
   <li>{{ geisha.name }}</li>
 {% endfor %}
