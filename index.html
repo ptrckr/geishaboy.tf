@@ -8,6 +8,7 @@ geishas:
   - {name: "Demonflame", img: "https://backpack.tf/images/440/particles/80_380x380.png", price: 150}
   - {name: "Knifestorm", img: "https://backpack.tf/images/440/particles/43_380x380.png", price: 150}
 ---
+<h2>{{ page.geishas | size }} ?</h2>
 {% for geisha in page.geishas %}
   <li {% unless geisha.price %}class="collected"{% endunless %}>
     <div class="geisha-image" style="background: url(https://wiki.teamfortress.com/w/images/e/eb/BLU_Geisha_Boy.png), url({{ geisha.img }});"></div>
