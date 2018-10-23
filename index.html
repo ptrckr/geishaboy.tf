@@ -10,6 +10,6 @@ geishas:
     - {name: "Demonflame", price: 150}
 ---
 <li>TEST</li>
-{% for geisha in site.index.geishas.collected %}
+{% for geisha in pages.geishas.collected %}
   <li>{{ geisha.name }}</li>
 {% endfor %}
