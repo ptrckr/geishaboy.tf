@@ -18,11 +18,11 @@
         <h1>Geisha Boy Collector</h1>
       </div>
       <footer>
-        <span>Collected {{ geishas_collected }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</span>
-        <span>Buying {{ geishas_buying }} Geisha Boy{% if geishas_buying != 1 %}s{% endif %}</span>
+        <a href="#geishas">Collected {{ geishas_collected }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</a>
+        <a href="#geishas">Buying {{ geishas_buying }} Geisha Boy{% if geishas_buying != 1 %}s{% endif %}</a>
       </footer>
     </div>
-    <div class="main">
+    <div id="geishas" class="main">
       <ol class="geisha-list">
         {% for geisha in page.geishas %}
           <li {% if geisha.collected %}class="collected"{% endif %}>
@@ -35,5 +35,11 @@
         {% endfor %}
       </ol>
     </div>
+    <footer>
+      <ul>
+        <li>Particle images by <a href="https://backpack.tf/developer/particles">backpack.tf</a></li>
+        <li>Another addiction by <a href="https://i.blinkoft.com">blinkoft.com</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
