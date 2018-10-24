@@ -201,4 +201,9 @@ footer span:hover::after {
   line-height: 14px;
   font-size: 14px;
   color: #dfb9f9;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
+  text-align: left;
 }
