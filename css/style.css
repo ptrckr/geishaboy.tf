@@ -161,7 +161,7 @@ h1 {
   background-size: 60%, 100% !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  opacity: .3;
+  opacity: .24;
 }
 
 .collected .geisha-image {
@@ -170,17 +170,16 @@ h1 {
 
 .geisha-list li .buying-price {
   position: absolute;
-  top: 50%;
-  right: 50%;
-  font-weight: 600;
-  background: #ac0000;
+  bottom: 33px;
+  left: 10px;
+  background: #e0b7fb;
   border-radius: 3px;
   padding: 4px 12px 5px 12px;
   line-height: 14px;
   font-size: 14px;
-  color: #fdd;
+  color: #703792;
   white-space: nowrap;
-  transform: translateX(50%) translateY(-50%) rotate(-3deg) scale(1.2);
+  transform: rotate(-2deg);
 }
 
 .geisha-list li .buying-price::before {
