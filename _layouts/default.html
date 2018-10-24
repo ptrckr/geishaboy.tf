@@ -18,15 +18,15 @@
         <h1>Geisha Boy Collector</h1>
       </div>
       <footer>
-        <span>Collected {{ geishas_collected }} Geisha Boys</span>
-        <span>Buying {{ geishas_buying }} Geisha Boys</span>
+        <span>Collected {{ geishas_collected }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</span>
+        <span>Buying {{ geishas_buying }} Geisha Boy{% if geishas_buying != 1 %}s{% endif %}</span>
       </footer>
     </div>
     <div class="main">
       <ol class="geisha-list">
         {% for geisha in page.geishas %}
           <li {% if geisha.collected %}class="collected"{% endif %}>
-            <div class="geisha-image" style="background: url(https://wiki.teamfortress.com/w/images/e/eb/BLU_Geisha_Boy.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
+            <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split "," | sample }}.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
             <span class="effect-name">{{ geisha.name }}</span>
             {% if geisha.price %}
               <span class="buying-price">{{ geisha.price }}</span>
