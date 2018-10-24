@@ -78,7 +78,7 @@ header .nav a:hover::after {
   width: 100%;
   flex: 1 1;
   display: flex;
-  background: url(img/screen3overlay.jpg);
+  background: url(../img/screen3overlay.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
