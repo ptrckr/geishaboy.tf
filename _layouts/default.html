@@ -26,7 +26,7 @@
       <ol class="geisha-list">
         {% for geisha in page.geishas %}
           <li {% if geisha.collected %}class="collected"{% endif %}>
-            <div class="geisha-image" style="background: url(img/geishaboy/blu.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
+            <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
             <span class="effect-name">{{ geisha.name }}</span>
             {% if geisha.price %}
               <span class="buying-price">{{ geisha.price }}</span>
