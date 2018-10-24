@@ -18,7 +18,7 @@
         <h1>Geisha Boy Collector</h1>
       </div>
       <footer>
-        <a href="#geishas">Collected {{ geishas_collected }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</a>
+        <a href="#geishas">Collected {{ geishas_collected }} of {{ page.geishas | size }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</a>
         <a href="#geishas">Buying {{ geishas_buying }} Geisha Boy{% if geishas_buying != 1 %}s{% endif %}</a>
       </footer>
     </div>
