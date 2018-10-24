@@ -72,5 +72,11 @@ geishas:
   - {id: 107, name: "Neutron Star"}
   - {id: 109, name: "Starstorm Insomnia"}
   - {id: 110, name: "Starstorm Slumber"}
-
 ---
+{% for geisha in page.geishas %}
+  {% if geisha.collected %}
+    {% increment geishas_collected %}
+  {% else %}
+    {% increment geishas_buying}
+  {% endif %}
+{% endfor %}
