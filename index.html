@@ -1,20 +1,76 @@
 ---
 layout: default
 title: geishaboy.tf
-testing: yo
 geishas:
-  - {name: "Burning flames", img: "https://backpack.tf/images/440/particles/13_380x380.png"}
-  - {name: "Frostbite", img: "https://backpack.tf/images/440/particles/87_380x380.png"}
-  - {name: "Demonflame", img: "https://backpack.tf/images/440/particles/80_380x380.png", price: 150}
-  - {name: "Knifestorm", img: "https://backpack.tf/images/440/particles/43_380x380.png", price: 150}
+  - {id: 6, name: "Green Confetti", collected: true}
+  - {id: 7, name: "Purple Confetti"}
+  - {id: 8, name: "Haunted Ghosts"}
+  - {id: 9, name: "Green Energy"}
+  - {id: 10, name: "Purple Energy"}
+  - {id: 11, name: "Circling TF Logo"}
+  - {id: 12, name: "Massed Flies"}
+  - {id: 13, name: "Burning Flames"}
+  - {id: 14, name: "Scorching Flames"}
+  - {id: 17, name: "Sunbeams"}
+  - {id: 29, name: "Stormy Storm"}
+  - {id: 33, name: "Orbiting Fire"}
+  - {id: 34, name: "Bubbling"}
+  - {id: 35, name: "Smoking"}
+  - {id: 36, name: "Steaming"}
+  - {id: 38, name: "Cloudy Moon"}
+  - {id: 56, name: "Kill-a-Watt"}
+  - {id: 57, name: "Terror-Watt"}
+  - {id: 58, name: "Cloud 9"}
+  - {id: 70, name: "Time Warp"}
+  - {id: 15, name: "Searing Plasma"}
+  - {id: 16, name: "Vivid Plasma"}
+  - {id: 18, name: "Circling Peace Sign"}
+  - {id: 19, name: "Circling Heart"}
+  - {id: 30, name: "Blizzardy Storm"}
+  - {id: 31, name: "Nuts n' Bolts"}
+  - {id: 32, name: "Orbiting Planets"}
+  - {id: 37, name: "Flaming Lantern"}
+  - {id: 39, name: "Cauldron Bubbles"}
+  - {id: 40, name: "Eerie Orbiting Fire"}
+  - {id: 43, name: "Knifestorm", price: 150}
+  - {id: 44, name: "Misty Skull"}
+  - {id: 45, name: "Harvest Moon"}
+  - {id: 46, name: "It's A Secret To Everybody"}
+  - {id: 47, name: "Stormy 13th Hour"}
+  - {id: 59, name: "Aces High"}
+  - {id: 60, name: "Dead Presidents"}
+  - {id: 61, name: "Miami Nights"}
+  - {id: 62, name: "Disco Beat Down"}
+  - {id: 63, name: "Phosphorous"}
+  - {id: 64, name: "Sulphurous"}
+  - {id: 65, name: "Memory Leak"}
+  - {id: 66, name: "Overclocked"}
+  - {id: 67, name: "Electrostatic"}
+  - {id: 68, name: "Power Surge"}
+  - {id: 69, name: "Anti-Freeze"}
+  - {id: 71, name: "Green Black Hole"}
+  - {id: 72, name: "Roboactive"}
+  - {id: 73, name: "Arcana"}
+  - {id: 74, name: "Spellbound"}
+  - {id: 75, name: "Chiroptera Venenata"}
+  - {id: 76, name: "Poisoned Shadows"}
+  - {id: 77, name: "Something Burning This Way Comes"}
+  - {id: 78, name: "Hellfire"}
+  - {id: 79, name: "Darkblaze"}
+  - {id: 80, name: "Demonflame"}
+  - {id: 81, name: "Bonzo The All-Gnawing"}
+  - {id: 82, name: "Amaranthine"}
+  - {id: 83, name: "Stare From Beyond"}
+  - {id: 84, name: "The Ooze"}
+  - {id: 85, name: "Ghastly Ghosts Jr"}
+  - {id: 86, name: "Haunted Phantasm Jr"}
+  - {id: 87, name: "Frostbite"}
+  - {id: 88, name: "Molten Mallard"}
+  - {id: 89, name: "Morning Glory"}
+  - {id: 90, name: "Death at Dusk"}
+  - {id: 108, name: "Tesla Coil"}
+  - {id: 107, name: "Neutron Star"}
+  - {id: 109, name: "Starstorm Insomnia"}
+  - {id: 110, name: "Starstorm Slumber"}
+
 ---
-<h2>{{ page.geishas | size }} ?</h2>
-{% for geisha in page.geishas %}
-  <li {% unless geisha.price %}class="collected"{% endunless %}>
-    <div class="geisha-image" style="background: url(https://wiki.teamfortress.com/w/images/e/eb/BLU_Geisha_Boy.png), url({{ geisha.img }});"></div>
-    <span class="effect-name">{{ geisha.name }}</span>
-    {% if geisha.price %}
-      <span class="buying-price">{{ geisha.price }}</span>
-    {% endif %}
-  </li>
-{% endfor %}
