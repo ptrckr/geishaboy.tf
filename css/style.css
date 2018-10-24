@@ -213,20 +213,27 @@ body > footer {
   background: #6e3e8e;
   display: flex;
   justify-content: center;
-  color: #e1bdf9;
+  color: #e0b9f9;
   padding: 0px 0 100px 0;
 }
 
 body > footer li {
-  display: inline-block;
+  display: inline-flex;
   margin: 0 30px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 body > footer li a {
   color: #fff;
   font-family: chantal;
   text-decoration: none;
-  border-bottom: 1px solid #aa7aca;
-  font-size: 18px;
-  vertical-align: -1px;
+  font-size: 28px;
+  display: block;
+  font-weight: 500;
+  margin-top: 5px;
 }
