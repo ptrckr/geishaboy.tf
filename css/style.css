@@ -13,6 +13,9 @@ li {
 :root {
   --collectors: #AA0000;
   --decorated: #FAFAFA;
+  --unusual: #8650AC;
+  --unusual-light: #B783DD;
+  --unusual-dark: #6C3d8C;
 }
 
 body {
@@ -22,7 +25,7 @@ body {
   font-style: normal;
 }
 
-/** Header **/
+/*/// Header ///*/
 header {
   height: 100vh;
   position: relative;
@@ -87,7 +90,13 @@ nav a:hover {
   width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  [class|="cover-title"] {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 500px) {
   [class|="cover-title"] {
     font-size: 40px;
   }
@@ -101,22 +110,14 @@ nav a:hover {
   bottom: -100px;
 }
 
-
-
-
-
-
-.main {
+/*/// Main ///*/
+main {
   padding: 100px 0;
-  background: #6e3e8e;
-}
-
-.geisha-list {
-  margin: 0 100px;
+  background: var(--unusal-dark);
   text-align: center;
 }
 
-.geisha-list li {
+.geisha {
   width: 180px;
   height: 180px;
   border-radius: 5px;
@@ -124,7 +125,7 @@ nav a:hover {
   margin: 10px;
   vertical-align: top;
   position: relative;
-  background-color: #8650AC;
+  background-color: var(--unusual);
 }
 
 .geisha-image {
@@ -133,53 +134,46 @@ nav a:hover {
   background-size: 60%, 100% !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  opacity: .24;
+  opacity: .25;
 }
 
-.collected .geisha-image {
+.geisha.collected .geisha-image {
   opacity: 1;
 }
 
-.geisha-list li .buying-price {
+.effect, .price {
   position: absolute;
-  bottom: 33px;
-  left: 10px;
-  background: #e0b7fb;
-  border-radius: 3px;
-  padding: 4px 12px 5px 12px;
-  line-height: 13px;
-  font-size: 12px;
-  color: #703792;
-  white-space: nowrap;
-  transform: rotate(-2deg);
-  font-weight: 600;
-}
-
-.geisha-list li .buying-price::before {
-  content: "Buying for ";
-}
-
-.geisha-list li .buying-price::after {
-  content: " keys";
-}
-
-.geisha-list li .effect-name {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: #6f3b90;
   border-radius: 3px;
   padding: 4px 12px 5px 12px;
   line-height: 13px;
   font-size: 12px;
   color: #dfb9f9;
   white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100% - 20px);
   text-align: left;
   font-weight: 600;
 }
+
+.effect {
+  bottom: 10px;
+  left: 10px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 20px);
+  background: var(--unusual-dark);
+  color: var(--unusual-light);
+}
+
+.price {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-2deg);
+  background: var(--unusual-light);
+  color: var(--unusual-dark);
+}
+
+
+
+
 
 body > footer {
   background: #6e3e8e;

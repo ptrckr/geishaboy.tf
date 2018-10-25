@@ -17,23 +17,22 @@
       </nav>
       <div class="cover">
         <h1 class="cover-title-top">Geisha Boy</h1>
-        <img src="img/screen3overlay.jpg" />
+        <img src="img/screen3.jpg" />
         <h1 class="cover-title-bottom">Collector</h1>
       </div>
     </header>
-    <div id="geishas" class="main">
-      <ol class="geisha-list">
-        {% for geisha in page.geishas %}
-          <li {% if geisha.collected %}class="collected"{% endif %}>
-            <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
-            <span class="effect-name">{{ geisha.name }}</span>
-            {% if geisha.price %}
-              <span class="buying-price">{{ geisha.price }}</span>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ol>
-    </div>
+    <main>
+      {% for geisha in page.geishas %}
+        <article class="geisha {% if geisha.collected %}collected{% endif %}">
+          <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
+          {% if geisha.price %}
+            <span class="price">{{ geisha.price }}</span>
+          {% endif %}
+          <span class="effect">{{ geisha.name }}</span>
+        </article>
+      {% endfor %}
+    </main>
+
     <footer>
       <ul>
         <li>Particle images by <a href="https://backpack.tf/developer/particles">backpack.tf</a></li>
