@@ -87,6 +87,12 @@ nav a:hover {
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  [class|="cover-title"] {
+    font-size: 40px;
+  }
+}
+
 .cover-title-top {
   top: -100px;
 }
