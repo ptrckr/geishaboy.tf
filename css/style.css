@@ -16,123 +16,65 @@ li {
 }
 
 :root {
-  --red: #aa0000;
+  --collectors: #AA0000;
+  --decorated: #FAFAFA;
 }
 
 body {
   font-size: 18px;
-  font-family: halyard-display, sans-serif;
+  font-family: poppins, sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: var(--red);
+  background: var(-collectors);
 }
 
-.above-fold {
-  display: flex;
-  flex-direction: column;
+/** Header **/
+header {
   width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 150px 0;
+  background: var(--collectors);
+}
+
+nav {
+  display: none;
+}
+
+.cover {
+  position: relative;
+  text-align: center;
+}
+
+.cover img {
   height: 100%;
 }
 
-header {
-  width: 100%;
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin-bottom: 40px;
-  z-index: 9;
-}
-
-header .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header .nav a {
-  text-decoration: none;
-  position: relative;
-  color: white;
-  margin: 0 20px;
-}
-
-header .nav a::after {
-  content: "";
+[attr|="cover-title"] {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: #ca4545;
-  transition: all 250ms ease;
-}
-
-header .nav a:hover::after {
-  background: white;
-}
-
-.splash-image {
-  position: relative;
-  width: 100%;
-  flex: 1 1;
-  display: flex;
-  background: url(../img/screen3overlay.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-h1 {
-  color: white;
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
   font-size: 120px;
   font-family: chantal, sans-serif;
   font-weight: 601;
   font-style: italic;
-}
-
-.above-fold footer {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: .8;
-}
-
-.above-fold footer a {
-  position: relative;
-  text-decoration: none;
-  font-size: 30px;
-  color: white;
-  margin: 0 20px;
-  cursor: pointer;
-  font-weight: 600;
-  letter-spacing: .5px;
-}
-
-.above-fold footer a::after {
-  content: "";
-  position: absolute;
+  color: var(--decorated);
+  height: 200px;
+  line-height: 200px;
   left: 0;
-  bottom: 0;
   width: 100%;
-  height: 0;
-  background: white;
-  transition: all 250ms ease;
 }
 
-.above-fold footer a:hover::after {
-  height: 3px;
+.cover-title-top {
+  top: -100px;
 }
+
+.cover-title-bottom {
+  bottom: -100px;
+}
+
+
+
+
+
 
 .main {
   padding: 100px 0;
@@ -175,11 +117,12 @@ h1 {
   background: #e0b7fb;
   border-radius: 3px;
   padding: 4px 12px 5px 12px;
-  line-height: 14px;
-  font-size: 14px;
+  line-height: 13px;
+  font-size: 12px;
   color: #703792;
   white-space: nowrap;
   transform: rotate(-2deg);
+  font-weight: 600;
 }
 
 .geisha-list li .buying-price::before {
@@ -194,18 +137,18 @@ h1 {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  font-weight: 600;
   background: #6f3b90;
   border-radius: 3px;
   padding: 4px 12px 5px 12px;
-  line-height: 14px;
-  font-size: 14px;
+  line-height: 13px;
+  font-size: 12px;
   color: #dfb9f9;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
   max-width: calc(100% - 20px);
   text-align: left;
+  font-weight: 600;
 }
 
 body > footer {

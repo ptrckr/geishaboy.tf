@@ -1,27 +1,25 @@
 <!doctype html>
 <html>
   <head>
-    <title>{{ page.title }}</title>
+    <title>geishaboy.tf</title>
     <link rel="stylesheet" href="https://use.typekit.net/bqq2aau.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="above-fold">
-      <header>
-        <ul class="nav">
+    <header>
+      <nav>
+        <ul>
           <li><a href="https://steamcommunity.com/id/ptrckr">Steam</a></li>
           <li><a href="https://backpack.tf/profiles/76561198060233163">Backpack.tf</a></li>
           <li><a href="https://backpack.tf/profiles/76561198060233163">Send trade offer</a></li>
         </ul>
-      </header>
-      <div class="splash-image">
-        <h1>Geisha Boy Collector</h1>
+      </nav>
+      <div class="cover">
+        <h1 class="cover-title-top">Geisha Boy</h1>
+        <img src="img/screen3overlay.jpg" />
+        <h1 class="cover-title-bottom">Collector</h1>
       </div>
-      <footer>
-        <a href="#geishas">Collected {{ geishas_collected }} of {{ page.geishas | size }} Geisha Boy{% if geishas_collected != 1 %}s{% endif %}</a>
-        <a href="#geishas">Buying {{ geishas_buying }} Geisha Boy{% if geishas_buying != 1 %}s{% endif %}</a>
-      </footer>
-    </div>
+    </header>
     <div id="geishas" class="main">
       <ol class="geisha-list">
         {% for geisha in page.geishas %}
