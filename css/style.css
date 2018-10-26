@@ -34,11 +34,15 @@ header {
 }
 
 @media (min-width: 900px) {
-  height: 100vh;
+  header {
+    height: 100vh;
+  }
 }
 
 @media (max-width: 900px) {
-  padding: 0 0 80px 0;
+  header {
+    padding: 0 0 80px 0;
+  }
 }
 
 nav {
