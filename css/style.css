@@ -141,6 +141,10 @@ main {
     padding-bottom: calc((100% - 5px * 12) / 6);
     margin: 5px;
   }
+
+  .price {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
