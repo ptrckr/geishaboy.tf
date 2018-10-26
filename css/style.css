@@ -129,7 +129,21 @@ main {
   background-color: var(--unusual);
 }
 
-@media (min-width: 600px) {
+@media (max-width: 900px) {
+  main {
+    font-size: 0;
+    padding: 100px 5px;
+  }
+
+  .geisha {
+    width: calc((100% - 5px * 12) / 6);
+    height: initial;
+    padding-bottom: calc((100% - 5px * 12) / 6);
+    margin: 5px;
+  }
+}
+
+@media (max-width: 600px) {
   main {
     font-size: 0;
     padding: 100px 5px;
