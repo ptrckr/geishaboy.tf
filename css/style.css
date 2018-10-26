@@ -239,10 +239,10 @@ main {
 
 /*/// Footer ///*/
 footer {
-  background: #6e3e8e;
+  background: var(--unusual-dark);
   display: flex;
   justify-content: center;
-  color: #e0b9f9;
+  color: var(--unusual-light);
   padding: 0px 0 100px 0;
 }
 
@@ -255,9 +255,6 @@ footer li {
 
 footer li span {
   font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 footer li a {
