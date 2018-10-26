@@ -136,7 +136,7 @@ nav a:hover {
 
 /*/// Main ///*/
 main {
-  padding: 100px 0;
+  padding: 100px;
   background: var(--unusual-dark);
   text-align: center;
 }
@@ -223,9 +223,8 @@ main {
 }
 
 .price {
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) rotate(-2deg);
+  top: 10px;
+  right: 10px;
   background: var(--unusual-bright);
   color: var(--unusual-dark);
 }
@@ -238,10 +237,8 @@ main {
   content: " keys";
 }
 
-
-
-
-body > footer {
+/*/// Footer ///*/
+footer {
   background: #6e3e8e;
   display: flex;
   justify-content: center;
@@ -249,19 +246,22 @@ body > footer {
   padding: 0px 0 100px 0;
 }
 
-body > footer li {
+footer li {
   display: inline-flex;
   margin: 0 30px;
   flex-direction: column;
   align-items: center;
+}
+
+footer li span {
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-body > footer li a {
-  color: #fff;
+footer li a {
+  color: var(--decorated);
   font-family: chantal;
   text-decoration: none;
   font-size: 28px;
