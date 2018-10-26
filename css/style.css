@@ -84,7 +84,9 @@ nav a:hover {
 }
 
 @media (min-width: 900px) {
-  height: 100%;
+  .cover {
+    height: 100%;
+  }
 }
 
 .cover img {
