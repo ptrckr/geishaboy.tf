@@ -28,10 +28,17 @@ body {
 
 /*/// Header ///*/
 header {
-  height: 100vh;
   position: relative;
   padding: 160px 0;
   background: var(--collectors);
+}
+
+@media (min-width: 900px) {
+  height: 100vh;
+}
+
+@media (max-width: 900px) {
+  padding: 0 0 80px 0;
 }
 
 nav {
@@ -70,12 +77,22 @@ nav a:hover {
 .cover {
   position: relative;
   text-align: center;
+}
+
+@media (min-width: 900px) {
   height: 100%;
 }
 
 .cover img {
   max-height: 100%;
   max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .cover img {
+    padding: 40px;
+    margin: -40px 0;
+  }
 }
 
 [class|="cover-title"] {
