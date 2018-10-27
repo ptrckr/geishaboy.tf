@@ -37,12 +37,6 @@ header {
   background-position: center;
 }
 
-@media (min-width: 900px) {
-  header {
-    height: 100vh;
-  }
-}
-
 @media (max-width: 900px) {
   header {
     padding: 0 0 80px 0;
@@ -93,7 +87,7 @@ nav a:hover {
 }
 
 .cover img {
-  max-height: 100%;
+  max-height: 500px;
   max-width: 100%;
 }
 
