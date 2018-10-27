@@ -12,13 +12,22 @@ li {
 
 :root {
   --collectors: #AA0000;
+  --collectors-dark: #800000;
+  --collectors-bright: #DB0000;
   --collectors-rgb: 170, 0, 0;
   --decorated: #FAFAFA;
   --decorated-rgb: 250, 250, 250;
   --unusual: #8650AC;
+  --unusual-rgb: 134, 80, 172;
   --unusual-bright: #EED7FE;
   --unusual-light: #B783DD;
   --unusual-dark: #6C3d8C;
+  --geniue: #4D7455;
+  --geniue-dark: #3D5C43;
+  --geniue-bright: #7EA987;
+  --unique: #FFD700;
+  --unique-dark: #C7A900;
+  --unique-bright: #FFE552;
 }
 
 body {
@@ -137,6 +146,7 @@ main {
   padding-top: 0;
   background: var(--unusual-dark);
   text-align: center;
+  font-size: 0;
 }
 
 .intro {
@@ -170,6 +180,14 @@ main {
   vertical-align: top;
   position: relative;
   background-color: var(--unusual);
+}
+
+.collectors.geisha {
+  background-color: var(--collectors)
+}
+
+.geisha:not(.collected) {
+  background: rgba(var(--unusual-rgb), .6);
 }
 
 @media (max-width: 900px) {
@@ -240,6 +258,11 @@ main {
   max-width: calc(100% - 20px);
   background: var(--unusual-dark);
   color: var(--unusual-light);
+}
+
+.collectors.geisha .effect {
+  background: var(--collectors-dark);
+  color: var(--collectors-bright);
 }
 
 .price {

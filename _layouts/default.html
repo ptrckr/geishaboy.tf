@@ -27,12 +27,12 @@
         <p class="sub">The collection consists of {{ geishas_collected }} of {{ page.geishas_available }} available Geishas, that's {{ 100.0 | divided_by: page.geishas_available | times: geishas_collected | round }}%, last updated on {{ "now" | date: "%Y-%m-%d" }}.</p>
       </div>
       {% for geisha in page.geishas %}
-        <article class="geisha {% if geisha.collected %}collected{% endif %}">
-          <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png), url(img/particles/{{ geisha.id }}_380x380.png);"></div>
+        <article class="{% if geisha.quality %}{{ geisha.quality | remove "'" }}{% elsif %}unusual{% endif %} geisha {% if geisha.collected %}collected{% endif %}">
+          <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_380x380.png{% endif %});"></div>
           {% if geisha.price %}
             <span class="price">{{ geisha.price }}</span>
           {% endif %}
-          <span class="effect">{{ geisha.name }}</span>
+          <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
         </article>
       {% endfor %}
     </main>
