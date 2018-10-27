@@ -195,7 +195,7 @@ main {
 }
 
 .geisha:not(.collected) {
-  background: rgba(var(--unusual-rgb), .6);
+  background: rgba(var(--unusual-rgb), .2);
 }
 
 @media (max-width: 900px) {
@@ -252,10 +252,11 @@ main {
   padding: 4px 12px 5px 12px;
   line-height: 13px;
   font-size: 12px;
-  color: #dfb9f9;
   white-space: nowrap;
   text-align: left;
   font-weight: 600;
+  background: var(--unusual-dark);
+  color: var(--unusual-light);
 }
 
 .effect {
@@ -264,8 +265,6 @@ main {
   overflow-x: hidden;
   text-overflow: ellipsis;
   max-width: calc(100% - 20px);
-  background: var(--unusual-dark);
-  color: var(--unusual-light);
 }
 
 .collectors.geisha .effect {
@@ -286,6 +285,9 @@ main {
 .price {
   top: 10px;
   right: 10px;
+}
+
+.geisha:hover .price {
   background: var(--unusual-bright);
   color: var(--unusual-dark);
 }
