@@ -12,6 +12,7 @@ li {
 
 :root {
   --collectors: #AA0000;
+  --collectors-rgb: 170, 0, 0;
   --decorated: #FAFAFA;
   --unusual: #8650AC;
   --unusual-bright: #EED7FE;
@@ -30,7 +31,9 @@ body {
 header {
   position: relative;
   padding: 160px 0;
-  background: var(--collectors);
+  background: linear-gradient(180deg, rgba(var(--collectors-rgb), .8) 20%, var(--unusual-dark)), url(../img/screen3.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 @media (min-width: 900px) {
