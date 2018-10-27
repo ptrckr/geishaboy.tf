@@ -77,7 +77,7 @@ geishas:
   - {quality: "Unique", collected: true}
 ---
 {% for geisha in page.geishas %}
-  {% geisha.id and if geisha.collected %}
+  {% if geisha.id and geisha.collected %}
     {% increment geishas_collected %}
   {% endif %}
 {% endfor %}
