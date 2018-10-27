@@ -22,9 +22,9 @@ li {
   --unusual-bright: #EED7FE;
   --unusual-light: #B783DD;
   --unusual-dark: #6C3d8C;
-  --geniue: #4D7455;
-  --geniue-dark: #3D5C43;
-  --geniue-bright: #7EA987;
+  --genuine: #4D7455;
+  --genuine-dark: #3D5C43;
+  --genuine-bright: #7EA987;
   --unique: #FFD700;
   --unique-dark: #C7A900;
   --unique-bright: #FFE552;
@@ -186,6 +186,14 @@ main {
   background-color: var(--collectors)
 }
 
+.genuine.geisha {
+  background-color: var(--genuine)
+}
+
+.unique.geisha {
+  background-color: var(--unique)
+}
+
 .geisha:not(.collected) {
   background: rgba(var(--unusual-rgb), .6);
 }
@@ -263,6 +271,16 @@ main {
 .collectors.geisha .effect {
   background: var(--collectors-dark);
   color: var(--collectors-bright);
+}
+
+.genuine.geisha .effect {
+  background: var(--genuine-dark);
+  color: var(--genuine-bright);
+}
+
+.unique.geisha .effect {
+  background: var(--unique-dark);
+  color: var(--unique-bright);
 }
 
 .price {
