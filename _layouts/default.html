@@ -33,8 +33,10 @@
             <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_380x380.png){% endif %};"></div>
             {% if geisha.price %}
               <span class="price">{{ geisha.price }}</span>
-              <a class="trade-button" href="{{ page.trade_link }}">Send Trade</a>
             {% endif %}
+            { % if geisha.collected % }
+              <a class="trade-button" target="_blank" href="{{ page.trade_link }}">Send Trade</a>
+            { % endif % }
             <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
           {% if geisha.item_id %}</a>{% endif %}
         </article>
