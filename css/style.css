@@ -305,6 +305,27 @@ main {
   content: " keys";
 }
 
+.trade-button {
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--decorated);
+  color: var(--unusual-dark);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.geisha:hover .trade-button {
+  opacity: 1;
+}
+
 /*/// Footer ///*/
 footer {
   background: var(--unusual-dark);

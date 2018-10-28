@@ -13,7 +13,7 @@
         <ul>
           <li><a href="https://steamcommunity.com/id/ptrckr">Steam</a></li>
           <li><a href="https://backpack.tf/profiles/76561198060233163">Backpack.tf</a></li>
-          <li><a href="https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU">Send trade offer</a></li>
+          <li><a href="{{ page.trade_link }}">Send trade offer</a></li>
         </ul>
       </nav>
       <div class="cover">
@@ -33,6 +33,7 @@
             <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_380x380.png){% endif %};"></div>
             {% if geisha.price %}
               <span class="price">{{ geisha.price }}</span>
+              <a class="trade-button" href="{{ page.trade_link }}">Send Trade</a>
             {% endif %}
             <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
           {% if geisha.item_id %}</a>{% endif %}
