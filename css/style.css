@@ -241,9 +241,9 @@ main {
   top: 0;
   height: 100%;
   width: 100%;
-  background-size: 60%, 100% !important;
+  background-size: 58%, 100% !important;
   background-repeat: no-repeat !important;
-  background-position: center !important;
+  background-position: center 45%, center !important;
   opacity: .25;
 }
 
