@@ -183,6 +183,10 @@ main {
   background-color: var(--unusual);
 }
 
+.unusual.geisha {
+  box-shadow: inset 0 0 0 1px var(--unusual);
+}
+
 .collectors.geisha {
   background-color: var(--collectors)
 }
