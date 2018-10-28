@@ -39,9 +39,9 @@ body {
 
 /*/// Header ///*/
 header {
+  padding-bottom: 150px;
   position: relative;
-  padding: 160px 0;
-  background: linear-gradient(180deg, rgba(var(--collectors-rgb), .8) 20%, var(--unusual-dark)), url(../img/screen3.jpg);
+  background: linear-gradient(180deg, rgba(var(--collectors-rgb), .9) 160px, rgba(var(--collectors-rgb), .9) 160px, var(--unusual-dark)), url(../img/screen3.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -53,15 +53,15 @@ header {
 }
 
 nav {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  z-index: 43;
   width: 100%;
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 43;
+  padding-bottom: 40px;
+  box-sizing: content-box;
 }
 
 nav li {
@@ -87,6 +87,7 @@ nav a:hover {
 .cover {
   position: relative;
   text-align: center;
+  font-size: 0;
 }
 
 @media (min-width: 900px) {
