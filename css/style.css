@@ -200,7 +200,7 @@ main {
 }
 
 .geisha:not(.collected) {
-  background: rgba(var(--unusual-rgb), .2);
+  background: none;
 }
 
 @media (max-width: 900px) {
