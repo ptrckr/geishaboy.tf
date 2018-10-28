@@ -34,9 +34,9 @@
             {% if geisha.price %}
               <span class="price">{{ geisha.price }}</span>
             {% endif %}
-            { % unless geisha.collected % }
+            {% unless geisha.collected %}
               <a class="trade-button" target="_blank" href="{{ page.trade_link }}">Send Trade</a>
-            { % endunless % }
+            {% endunless %}
             <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
           {% if geisha.item_id %}</a>{% endif %}
         </article>
