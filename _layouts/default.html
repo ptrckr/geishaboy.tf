@@ -29,11 +29,13 @@
       </div>
       {% for geisha in page.geishas %}
         <article class="{% if geisha.quality %}{{ geisha.quality | downcase | replace: "'", "" }}{% else %}unusual{% endif %} geisha {% if geisha.collected %}collected{% endif %}">
-          <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_380x380.png){% endif %};"></div>
-          {% if geisha.price %}
-            <span class="price">{{ geisha.price }}</span>
-          {% endif %}
-          <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
+          {% if geisha.item_id %}<a href="https://backpack.tf/item/{{ geisha.item_id }}">{% endif %}
+            <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_380x380.png){% endif %};"></div>
+            {% if geisha.price %}
+              <span class="price">{{ geisha.price }}</span>
+            {% endif %}
+            <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
+          {% if geisha.item_id %}</a>{% endif %}
         </article>
       {% endfor %}
     </main>
