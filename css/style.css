@@ -234,8 +234,8 @@ main {
 
 .price {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  right: 50%;
+  top: 50%;
   padding: 0 12px;
   line-height: 25px;
   font-size: 12px;
@@ -244,6 +244,13 @@ main {
   background: var(--unusual);
   color: var(--unusual-bright);
   text-decoration: none;
+  transform: rotate(-2deg) translateX(50%) translateY(-50%);
+  transform: all 250ms ease;
+  border-radius: 5px;
+}
+
+.geisha:hover .price {
+  transform: rotate(-2deg) translateX(50%) translateY(calc(-50% - 26px));
 }
 
 .price::before {
@@ -270,26 +277,22 @@ main {
   color: var(--unique-bright);
 }
 
-.geisha:hover .price {
-  background: var(--unusual-bright);
-  color: var(--unusual-dark);
-}
-
 .trade-button {
   position: absolute;
   text-decoration: none;
   top: 50%;
   right: 50%;
-  transform: rotate(-1deg) translateX(50%) translateY(-50%);
+  transform: translateX(50%) translateY(-50%);
   border-radius: 5px;
-  font-size: 14px;
-  background: #312B26;
-  color: #D7C9AF;
+  font-size: 16px;
+  background: var(--genuine-bright);
+  color: var(--decorated);
   line-height: 36px;
   padding: 0 20px;
   font-weight: 600;
-  transform-origin: top right !important;
+  white-space: nowrap;
   opacity: 0;
+  transition: all 250ms ease;
 }
 
 .geisha:hover .trade-button {
