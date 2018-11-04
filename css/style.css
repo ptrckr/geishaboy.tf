@@ -317,7 +317,7 @@ main {
 .trade-button {
   position: absolute;
   text-decoration: none;
-  top: 50%;
+  top: calc(50% + 10px);
   right: 50%;
   transform: translateX(50%) translateY(-50%);
   border-radius: 5px;
@@ -334,6 +334,7 @@ main {
 
 .geisha:hover .trade-button {
   opacity: 1;
+  top: 50%;
 }
 
 /*/// Footer ///*/
