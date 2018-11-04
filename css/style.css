@@ -95,6 +95,10 @@ nav a {
   transition: border 250ms ease;
 }
 
+[class$="-svg"] {
+  display: none;
+}
+
 @media (max-width: 900px) {
   nav a {
     margin: 0 10px;
@@ -105,6 +109,7 @@ nav a {
   }
 
   [class$="-svg"] {
+    display: block;
     fill: var(--decorated);
   }
 }
