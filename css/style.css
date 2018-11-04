@@ -276,7 +276,7 @@ main {
   color: var(--unusual-bright);
   text-decoration: none;
   transform: rotate(-2deg) translateX(50%) translateY(-50%);
-  transform: all 250ms ease;
+  transition: all 250ms ease;
   border-radius: 5px;
 }
 
