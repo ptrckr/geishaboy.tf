@@ -242,32 +242,13 @@ main {
   text-decoration: none;
 }
 
-.geisha:hover .price {
-  text-decoration: none;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  border-radius: 100px;
-  font-size: 16px;
-  background: var(--decorated);
-  color: var(--unusual-dark);
-}
-
 .price::before {
   content: "Buying for ";
   font-weight: 600;
 }
 
-.geisha:hover .price::before {
-  content: "Send trade offer"
-}
-
 .price::after {
   content: " keys";
-}
-
-.geisha:hover .price::after {
-  content: "";
 }
 
 .collectors.geisha .effect {
@@ -288,6 +269,26 @@ main {
 .geisha:hover .price {
   background: var(--unusual-bright);
   color: var(--unusual-dark);
+}
+
+.trade-button {
+  text-decoration: none;
+  top: 50%;
+  right: 50%;
+  transform: rotate(-1deg) translateX(50%) translateY(-50%);
+  border-radius: 5px;
+  font-size: 14px;
+  background: #312B26;
+  color: #D7C9AF;
+  line-height: 36px;
+  padding: 0 20px;
+  font-weight: 600;
+  transform-origin: top right !important;
+  opacity: 0;
+}
+
+.geisha:hover .trade-button {
+  opacity: 1;
 }
 
 /*/// Footer ///*/
