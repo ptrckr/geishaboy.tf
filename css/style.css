@@ -160,7 +160,7 @@ main {
 .geisha-list {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 var(--geisha-margin);
+  padding: 0 20px;
   margin: calc(var(--geisha-margin) * -1) 0;
   justify-content: center;
 }
@@ -218,7 +218,7 @@ main {
   margin: var(--geisha-margin);
   position: relative;
   background-color: var(--unusual);
-  flex-basis: calc(100% / 10 - var(--geisha-margin) * 2);
+  flex-basis: calc(100% / var(--geisha-row-count) - var(--geisha-margin) * 2);
   overflow: hidden;
   border-radius: 5px;
 }
