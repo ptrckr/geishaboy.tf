@@ -33,11 +33,8 @@
             {% if geisha.item_id %}<a href="https://backpack.tf/item/{{ geisha.item_id }}">{% endif %}
               <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_188x188.png){% endif %};"></div>
               {% if geisha.price %}
-                <span class="price">{{ geisha.price }}</span>
+                <a class="price" target="_blank" href="{{ page.trade_link }}">{{ geisha.price }}</a>
               {% endif %}
-              {% unless geisha.collected %}
-                <a class="trade-button" target="_blank" href="{{ page.trade_link }}">Send Trade</a>
-              {% endunless %}
               <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
             {% if geisha.item_id %}</a>{% endif %}
           </article>
