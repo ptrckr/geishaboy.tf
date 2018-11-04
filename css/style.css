@@ -28,6 +28,8 @@ li {
   --unique: #FFD700;
   --unique-dark: #C7A900;
   --unique-bright: #FFE552;
+
+  --geisha-margin: 5px;
 }
 
 body {
@@ -172,15 +174,23 @@ main {
   padding-top: 20px;
 }
 
+/*/// Geishas ///*/
+.geisha-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 var(--geisha-margin);
+  margin: calc(var(--geisha-margin) * -1) 0;
+  justify-content: center;
+}
+
 .geisha {
-  width: 180px;
   height: 180px;
-  border-radius: 5px;
   display: inline-block;
-  margin: 10px;
-  vertical-align: top;
+  margin: var(--geisha-margin);
   position: relative;
   background-color: var(--unusual);
+  flex-basis: calc(100% / 10 - var(--geisha-margin) * 2);
+  overflow: hidden;
 }
 
 .unusual.geisha {
@@ -251,7 +261,7 @@ main {
   opacity: 1;
 }
 
-.effect, .price {
+.price {
   position: absolute;
   border-radius: 3px;
   padding: 4px 12px 5px 12px;
@@ -265,11 +275,18 @@ main {
 }
 
 .effect {
-  bottom: 10px;
-  left: 10px;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  max-width: calc(100% - 20px);
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 20px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .collectors.geisha .effect {
@@ -331,7 +348,7 @@ footer {
   display: flex;
   justify-content: center;
   color: var(--unusual-light);
-  padding: 0px 0 100px 0;
+  padding: 100px 0;
 }
 
 footer li {

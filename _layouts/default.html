@@ -27,20 +27,22 @@
         <p>I'm collecting all unusual Geisha Boys. If you're selling one which I'm not owning send me a <a href="https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU" target="_blank">trade offer</a> or <a href="https://steamcommunity.com/id/ptrckr">add me on steam</a> to negotiate.<p>
         <p class="sub">The collection consists of {{ geishas_collected }} of {{ page.geishas_available }} <span title="Known to backpack.tf.">available*</span> Geishas, that's {{ 100.0 | divided_by: page.geishas_available | times: geishas_collected | round }}%, last updated on {{ "now" | date: "%Y-%m-%d" }}.</p>
       </div>
-      {% for geisha in page.geishas %}
-        <article class="{% if geisha.quality %}{{ geisha.quality | downcase | replace: "'", "" }}{% else %}unusual{% endif %} geisha {% if geisha.collected %}collected{% endif %}">
-          {% if geisha.item_id %}<a href="https://backpack.tf/item/{{ geisha.item_id }}">{% endif %}
-            <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_188x188.png){% endif %};"></div>
-            {% if geisha.price %}
-              <span class="price">{{ geisha.price }}</span>
-            {% endif %}
-            {% unless geisha.collected %}
-              <a class="trade-button" target="_blank" href="{{ page.trade_link }}">Send Trade</a>
-            {% endunless %}
-            <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
-          {% if geisha.item_id %}</a>{% endif %}
-        </article>
-      {% endfor %}
+        <div class="geisha-list">
+        {% for geisha in page.geishas %}
+          <article class="{% if geisha.quality %}{{ geisha.quality | downcase | replace: "'", "" }}{% else %}unusual{% endif %} geisha {% if geisha.collected %}collected{% endif %}">
+            {% if geisha.item_id %}<a href="https://backpack.tf/item/{{ geisha.item_id }}">{% endif %}
+              <div class="geisha-image" style="background: url(img/geishaboy/{{ "blu,red" | split: "," | sample }}.png){% if geisha.id %}, url(img/particles/{{ geisha.id }}_188x188.png){% endif %};"></div>
+              {% if geisha.price %}
+                <span class="price">{{ geisha.price }}</span>
+              {% endif %}
+              {% unless geisha.collected %}
+                <a class="trade-button" target="_blank" href="{{ page.trade_link }}">Send Trade</a>
+              {% endunless %}
+              <span class="effect">{% if geisha.effect %}{{ geisha.effect }}{% else %}{{ geisha.quality }}{% endif %}</span>
+            {% if geisha.item_id %}</a>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
     </main>
     <footer>
       <ul>
