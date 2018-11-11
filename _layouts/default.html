@@ -59,11 +59,13 @@
         </ol>
         <ol class="section-stamps">
           {% for effect in series.effects %}
-            <li class="grid-1 stamp">
-              <div class="stamp-image-wrapper">
-                <img src="img/stamps/{{ effect.id }}.jpg" />
-              </div>
-            </li>
+            {% if effect.collected %}
+              <li class="grid-1 stamp">
+                <div class="stamp-image-wrapper">
+                  <img src="img/stamps/{{ effect.id }}.jpg" />
+                </div>
+              </li>
+            {% endif %}
           {% endfor %}
         </ol>
       </section>
