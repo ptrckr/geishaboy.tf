@@ -41,11 +41,11 @@
 
       {% for effect in series.effects %}
         {% unless effect.unkown %}
-          {% increment total_effects %}
+          {% assign total_effects = total_effects | plus: 1 %}
         {% endunless %}
 
         {% if effect.collected %}
-          {% increment collected_effects %}
+          {% assign collected_effects = collected_effects | plus: 1 %}
         {% endif %}
       {% endfor %}
 
