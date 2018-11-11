@@ -80,6 +80,12 @@ li {
   --section-series-font: var(--font-weight) 30px/34px var(--font-family);
 }
 
+@media (max-width: 1180px) {
+  :root {
+    --body-width: 1000px;
+  }
+}
+
 /* @@@ Modules @@@ */
 
 [class*="grid-"] {
