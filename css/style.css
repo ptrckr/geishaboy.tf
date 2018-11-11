@@ -259,9 +259,13 @@ nav ul li a:hover, nav h1 a:hover {
 /* @@@ Section @@@ */
 
 section {
-  font: var(--section-base-font);
+  font-size: 0;
   padding: 100px 0;
   color: var(--white);
+}
+
+section div, .section-effect-list {
+  font: var(--section-base-font);
 }
 
 .section-series {
