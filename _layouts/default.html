@@ -36,16 +36,16 @@
     </header>
 
     {% for series in page.series %}
-      {% assign total_effects = 0 %}
       {% assign collected_effects = 0 %}
+      {% assign total_effects = 0 %}
 
       {% for effect in series.effects %}
-        {% unless effect.unkown %}
-          {% assign total_effects = total_effects | plus: 1 %}
-        {% endunless %}
-
         {% if effect.collected %}
           {% assign collected_effects = collected_effects | plus: 1 %}
+        {% endif %}
+
+        {% if effect.unkown != true %}
+          {% assign total_effects = total_effects | plus: 1 %}
         {% endif %}
       {% endfor %}
 
