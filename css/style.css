@@ -66,10 +66,11 @@ li {
   --white: white;
 
   /* Font */
+  --font-size: 22px;
   --font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
   --font-weight: 600;
 
-  --base-font: var(--font-weight) 22px/30px var(--font-family);
+  --base-font: var(--font-weight) calc(var(--font-size) * 0.8181818182)/calc(var(--font-size) * 1.3636363636) var(--font-family);
   --nav-font: var(--font-weight) 18px/18px var(--font-family);
   --hero-font: var(--font-weight) 60px/60px var(--font-family);
   --hero-background-font: var(--font-weight) 200px/200px var(--font-family);
@@ -135,6 +136,7 @@ li {
 
 html {
   background: var(--black);
+  overflow-x: hidden;
 }
 
 body {
@@ -143,7 +145,6 @@ body {
   width: var(--body-width);
   margin: 0 auto;
   padding: 0 var(--body-padding);
-  overflow-x: hidden;
 
   box-shadow: 0px 0 0 1px var(--darker-gray);
 }
@@ -300,9 +301,11 @@ section div, .section-effect-list {
 }
 
 .stamp {
-  width: 230px;
-  height: 230px;
+  width: var(--column-width);
+  height: var(--column-width);
   background: url(../img/section/stamp.svg);
+  background-size: contain;
+
   transition: transform 250ms ease;
   margin-bottom: calc(var(--column-margin) * 2);
 }
