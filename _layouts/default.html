@@ -44,9 +44,9 @@
           {% assign collected_effects = collected_effects | plus: 1 %}
         {% endif %}
 
-        {% if effect.unkown != true %}
+        {% unless effect.unkown %}
           {% assign total_effects = total_effects | plus: 1 %}
-        {% endif %}
+        {% endunless %}
       {% endfor %}
 
       <section class="section">
