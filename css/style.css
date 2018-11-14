@@ -71,17 +71,18 @@ li {
   --font-weight: 600;
 
   --base-font: var(--font-weight) calc(var(--font-size) * 0.8181818182)/calc(var(--font-size) * 1.3636363636) var(--font-family);
-  --nav-font: var(--font-weight) 18px/18px var(--font-family);
-  --hero-font: var(--font-weight) 60px/60px var(--font-family);
-  --hero-background-font: var(--font-weight) 200px/200px var(--font-family);
-  --sub-hero-font: var(--font-weight) 30px/38px var(--font-family);
+  --nav-font: var(--font-weight) calc(var(--font-size) * 0.8181818182)/calc(var(--font-size) * 0.8181818182) var(--font-family);
+  --hero-font: var(--font-weight) calc(var(--font-size) * 2.7272727273)/calc(var(--font-size) * 2.7272727273) var(--font-family);
+  --hero-background-font: var(--font-weight) calc(var(--font-size) * 9.0909090909)/calc(var(--font-size) * 9.0909090909) var(--font-family);
+  --sub-hero-font: var(--font-weight) calc(var(--font-size) * 1.3636363636)/calc(var(--font-size) * 1.7272727273) var(--font-family);
 
-  --section-base-font: var(--font-weight) 22px/30px var(--font-family);
-  --section-series-font: var(--font-weight) 30px/34px var(--font-family);
+  --section-base-font: var(--font-weight) var(--font-size)/calc(var(--font-size) * 1.3636363636) var(--font-family);
+  --section-series-font: var(--font-weight) calc(var(--font-size) * 1.3636363636)/calc(var(--font-size) * 1.5454545455) var(--font-family);
 }
 
 @media (max-width: 1180px) {
   :root {
+    --font-size: 18px;
     --body-width: 1000px;
   }
 }
@@ -122,20 +123,14 @@ li {
   position: relative;
 }
 
-.section::before, .section::after {
+.section::after {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 200%;
+  left: calc(-100vw / 2 + 50%);
+  width: 100vw;
   height: 1px;
   background: var(--darker-gray);
-}
-.section::before {
-  right: 50%;
-}
-
-.section::after {
-  left: 50%;
 }
 
 /* @@@ html/body @@@ */
@@ -146,7 +141,7 @@ html {
 }
 
 body {
-  font: 600 22px/30px a-otf-midashi-go-mb31-pr6n, sans-serif;
+  font: var(--section-base-font);
 
   width: var(--body-width);
   margin: 0 auto;
@@ -321,8 +316,6 @@ section div, .section-effect-list {
 }
 
 .stamp-image-wrapper {
-  width: 200px;
-  height: 200px;
   margin: 15px;
   border-radius: 3px;
   overflow: hidden;
