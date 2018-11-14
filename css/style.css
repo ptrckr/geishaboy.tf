@@ -359,6 +359,6 @@ footer span {
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translateX(calc(-70px - var(--body-padding)));
+  transform: translateX(calc(-100px - var(--body-padding)));
   z-index: 100;
 }
