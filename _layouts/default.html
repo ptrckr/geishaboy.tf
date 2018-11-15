@@ -62,7 +62,13 @@
             {% if effect.collected %}
               <li class="grid-1 stamp">
                 <div class="stamp-image-wrapper">
-                  <img src="img/stamps/{{ effect.id }}.jpg" />
+                  {% assign screenshot_exists = false %}
+                  {% for file in site.static_files %}
+                    {% if file.path contains "img\stamps" and file.basename == effect.id %}
+                      {% assign screenshot_exists = true %}
+                    {% endif %}
+                  {% endfor %}
+                  <img src="img/{% if screenshot_exists %}stamps/{{ effect.id }}.jpg{% else %}particles/{{ effect.id }}.png{% endif %}" />
                 </div>
               </li>
             {% endif %}
