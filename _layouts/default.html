@@ -64,7 +64,7 @@
                 <div class="stamp-image-wrapper">
                   {% assign screenshot_exists = false %}
                   {% for file in site.static_files %}
-                    {% if file.path contains "img\stamps" and file.basename == effect.id %}
+                    {% if file.path contains "img/stamps" and file.basename == effect.id %}
                       {% assign screenshot_exists = true %}
                     {% endif %}
                   {% endfor %}
