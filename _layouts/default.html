@@ -51,7 +51,7 @@
 
       <section class="section">
         <div class="grid-1 section-series">{{ series.name }}</div>
-        <div class="grid-1 section-progress">{{ collected_effects }}/{{ total_effects }} ｢{{ 100.0 | divided_by: total_effects | times: collected_effects | round }}%｣   →</div>
+        <div class="grid-1 section-progress">{{ collected_effects }}/{{ total_effects }} ｢{{ 100.0 | divided_by: total_effects | times: collected_effects | round }}%｣</div>
         <ol class="grid-2 section-effect-list">
           {% for effect in series.effects %}
             <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">{{ effect.name }}</li>
@@ -84,8 +84,8 @@
         <span>Team Fortress 2 is a trademark of <a href="https://valvesoftware.com">valvesoftware.com</a>。</span>
         <span><a href="https://geishaboy.tf">geishaboy.tf</a> is another addiction by <a href="http://pr.link">pr.link</a>。</span>
       </div>
-      <img class="footer-effect" src="img/footer/effect.png hide-on-mobile" />
-      <img class="footer-medic" src="img/footer/medic.png" />
+      <img class="footer-effect hide-on-mobile" src="img/footer/effect.png" />
+      <img class="footer-medic hide-on-mobile" src="img/footer/medic.png" />
     </footer>
 
     <script>

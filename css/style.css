@@ -280,6 +280,10 @@ section div, .section-effect-list {
   color: var(--dark-gray);
 }
 
+.section-progress::after {
+  content: "   →";
+}
+
 .section-effect-list li {
   display: inline-block;
 }
@@ -388,5 +392,29 @@ footer span {
 
   header {
     padding-bottom: var(--body-padding);
+  }
+
+  section {
+    padding-top: var(--body-padding);
+    padding-bottom: var(--body-padding);
+  }
+
+  .section-stamps li {
+    width: 50%;
+    transform: rotate(0deg) !important;
+  }
+
+  .section-progress {
+    text-align: left;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .section-stamps {
+    margin-top: 20px;
+  }
+
+  .section-progress::after {
+    content: "";
   }
 }
