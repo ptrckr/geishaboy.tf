@@ -2,6 +2,6 @@
 ---
 <ul>
 {% for file in site.static_files %}
-  <li>{{ file.path }}</li>
+  <li style="{% if file.path contains 'stamps' %}color: red;{% endif %}{% if file.basename == 87 %}font-weight: bold;{% endif %}">{{ file.path }}</li>
 {% endfor %}
 </ul>
