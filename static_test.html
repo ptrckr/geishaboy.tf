@@ -2,6 +2,7 @@
 ---
 <ul>
 {% for file in site.static_files %}
-  <li style="{% if file.path contains 'stamps' %}color: red;{% endif %}{% if file.basename == 87 %}font-weight: bold;{% endif %}">{{ file.path }}</li>
+  {% capture int_to_string %}87{% endcapture %}
+  <li style="{% if file.path contains 'stamps' %}color: red;{% endif %}{% if file.basename == int_to_string %}font-weight: bold;{% endif %}">{{ file.path }}</li>
 {% endfor %}
 </ul>
