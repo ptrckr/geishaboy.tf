@@ -357,3 +357,36 @@ footer span {
   transform: translateX(calc(-100px - var(--body-padding)));
   z-index: 100;
 }
+
+/* @@@ Mobile @@@ */
+
+@media (max-width: 1000px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  :root {
+    /* Body */
+    --body-width: 100%;
+    --body-padding: 30px;
+
+    /* Grid */
+    --column-margin: 0;
+    --column-width: 100%;
+  
+    /* Font */
+    --font-size: 14px;
+  }
+
+  [class*="grid-"] {
+    width: 100%;
+  }
+
+  .grid-push-left-1 {
+    left: auto;
+  }
+
+  header {
+    padding-bottom: var(--body-padding);
+  }
+}

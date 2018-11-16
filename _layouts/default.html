@@ -19,7 +19,7 @@
   </head>
   <body>
     <header class="section">
-      <nav>
+      <nav class="hide-on-mobile">
         <h1><a href="https://geishaboy.tf">GeishaBoy.tf</a></h1>
         <ul>
           <li><a href="https://backpack.tf/profiles/76561198060233163">backpack.tf</a></li>
@@ -30,9 +30,9 @@
         <img src="img/header/geishaboy.png" />
         <div class="hero-geisha-effect-background"></div>
       </div>
-      <p class="hero-copy">I‘m collecting all unusual Geisha Boys ― The collection consists of {{ total_geishas_collected }} of {{ total_geishas_available }} available<span class="sup" title="Known to backpack.tf. More might exist but they have not yet been discovered.">※</span> Geishas, that's {{ 100.0 | divided_by: total_geishas_available | times: total_geishas_collected | round }}㌫, last updated on {{ "now" | date: "%Y-%m-%d" }}。<span class="hero-background-copy">芸者少年</span></p>
+      <p class="hero-copy">I‘m collecting all unusual Geisha Boys ― The collection consists of {{ total_geishas_collected }} of {{ total_geishas_available }} available<span class="sup" title="Known to backpack.tf. More might exist but they have not yet been discovered.">※</span> Geishas, that's {{ 100.0 | divided_by: total_geishas_available | times: total_geishas_collected | round }}㌫, last updated on {{ "now" | date: "%Y-%m-%d" }}。<span class="hero-background-copy hide-on-mobile">芸者少年</span></p>
       <p class="sub-hero-copy grid-2 grid-center">If you‘re selling one which I‘m missing <a href="https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU" target="_blank">send me a trade offer</a> or <a href="https://steamcommunity.com/id/ptrckr">add me on steam</a> to negotiate。</p>
-      <img class="header-effect" src="img/header/effect.png" />
+      <img class="header-effect hide-on-mobile" src="img/header/effect.png" />
     </header>
 
     {% for series in page.series %}
@@ -84,7 +84,7 @@
         <span>Team Fortress 2 is a trademark of <a href="https://valvesoftware.com">valvesoftware.com</a>。</span>
         <span><a href="https://geishaboy.tf">geishaboy.tf</a> is another addiction by <a href="http://pr.link">pr.link</a>。</span>
       </div>
-      <img class="footer-effect" src="img/footer/effect.png" />
+      <img class="footer-effect" src="img/footer/effect.png hide-on-mobile" />
       <img class="footer-medic" src="img/footer/medic.png" />
     </footer>
 
