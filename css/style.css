@@ -278,7 +278,6 @@ section div, .section-effect-list {
 .section-progress {
   text-align: right;
   white-space: pre;
-  color: var(--dark-gray);
 }
 
 .section-progress::after {
