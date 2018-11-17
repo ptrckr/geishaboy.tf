@@ -432,4 +432,8 @@ footer span {
   footer span {
     display: inline;
   }
+
+  .footer-medic {
+    transform: translateX(calc(-140px - var(--body-padding)));
+  }
 }
