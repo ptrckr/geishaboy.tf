@@ -54,16 +54,12 @@
         <div class="grid-1 section-progress">{{ collected_effects }}/{{ total_effects }} ｢{{ 100.0 | divided_by: total_effects | times: collected_effects | round }}%｣</div>
         <ol class="grid-2 section-effect-list">
           {% for effect in series.effects %}
-            <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">
-              <span>
-                <ruby>
-                  {{ effect.name }}
-                  {% if effect.price %}
-                    <rp>(</rp><rt>《 Buying for {{ effect.price }} keys 》</rt><rp>)</rp>
-                  {% endif %}
-                </ruby>
-              </span>
-            </li>
+            <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}"><span><ruby>
+              {{ effect.name }}
+              {% if effect.price %}
+                <rp>(</rp><rt>《 Buying for {{ effect.price }} keys 》</rt><rp>)</rp>
+              {% endif %}
+            </ruby></span></li>
           {% endfor %}
         </ol>
         <ol class="section-stamps">
