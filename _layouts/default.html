@@ -54,7 +54,7 @@
         <div class="grid-1 section-progress">{{ collected_effects }}/{{ total_effects }} ｢{{ 100.0 | divided_by: total_effects | times: collected_effects | round }}%｣</div>
         <ol class="grid-2 section-effect-list">
           {% for effect in series.effects %}
-            <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">{{ effect.name }}</li>
+            <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}"><span>{{ effect.name }}<span></li>
           {% endfor %}
         </ol>
         <ol class="section-stamps">

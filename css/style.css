@@ -138,6 +138,7 @@ li {
 html {
   background: var(--black);
   overflow-x: hidden;
+  cursor: default;
 }
 
 body {
@@ -282,6 +283,7 @@ section div, .section-effect-list {
 
 .section-progress::after {
   content: "   →";
+  color: var(--gray);
 }
 
 .section-effect-list li {
@@ -290,14 +292,13 @@ section div, .section-effect-list {
 
 .section-effect-list li:not(:last-child)::after {
   content: ", ";
-  color: var(--white);
 }
 
-.section-effect-list li.missing:not(:hover) {
-  color: var(--darker-gray);
+.section-effect-list li.missing span:not(:hover) {
+  color: var(--gray);
 }
 
-.section-effect-list li.unknown {
+.section-effect-list li.unknown span {
   text-decoration: line-through;
 }
 
@@ -394,14 +395,13 @@ footer span {
     padding-bottom: var(--body-padding);
   }
 
+  .sub-hero-copy {
+    margin-top: 20px; 
+  }
+
   section {
     padding-top: var(--body-padding);
     padding-bottom: var(--body-padding);
-  }
-
-  .section-stamps li {
-    width: 50%;
-    transform: rotate(0deg) !important;
   }
 
   .section-progress {
@@ -411,10 +411,26 @@ footer span {
   }
 
   .section-stamps {
-    margin-top: 20px;
+    margin-top: var(--body-padding);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .stamp {
+    width: calc(50% - 5px);
+    margin-bottom: 10px;
   }
 
   .section-progress::after {
     content: "";
+  }
+
+  footer {
+    padding: var(--body-padding) 0;
+  }
+
+  footer span {
+    display: inline;
   }
 }
