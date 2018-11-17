@@ -316,6 +316,10 @@ rt, rp {
   margin-bottom: 6px;
 }
 
+rp {
+  display: none;
+}
+
 .section-stamps {
   margin-top: 50px;
 }

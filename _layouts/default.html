@@ -56,10 +56,12 @@
           {% for effect in series.effects %}
             <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">
               <span>
-                <ruby>{{ effect.name }}</ruby>
-                {% if effect.price %}
-                  <rp>(</rp><rt>Buying for {{ effect.price }} keys</rt><rp>)</rp>
-                {% endif %}
+                <ruby>
+                  {{ effect.name }}
+                  {% if effect.price %}
+                    <rp>(</rp><rt>Buying for {{ effect.price }} keys</rt><rp>)</rp>
+                  {% endif %}
+                </ruby>
               </span>
             </li>
           {% endfor %}
