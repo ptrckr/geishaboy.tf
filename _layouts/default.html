@@ -57,7 +57,7 @@
             <li class="{% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}"><span><ruby>
               {{ effect.name }}
               {% if effect.price %}
-                <rp>(</rp><rt>《 Buying for {{ effect.price }} keys 》</rt><rp>)</rp>
+                <rp>(</rp><rt>( Buying for {{ effect.price }} keys )</rt><rp>)</rp>
               {% endif %}
             </ruby></span></li>
           {% endfor %}
