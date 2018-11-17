@@ -307,7 +307,6 @@ ruby {
 }
 
 rt, rp {
-  text-align: unset;
   font-size: 55%;
   color: var(--gray);
   display: inline;
