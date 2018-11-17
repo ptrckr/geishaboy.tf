@@ -301,6 +301,21 @@ section div, .section-effect-list {
   text-decoration: line-through;
 }
 
+ruby {
+  display: inline-flex;
+  flex-direction: column-reverse;
+}
+
+rt, rp {
+  text-align: unset;
+  font-size: 55%;
+  color: var(--gray);
+  display: inline;
+  line-height: 0;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
 .section-stamps {
   margin-top: 50px;
 }
