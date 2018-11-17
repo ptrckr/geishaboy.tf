@@ -307,12 +307,12 @@ ruby {
 }
 
 rt, rp {
-  font-size: 55%;
+  font-size: 50%;
   color: var(--gray);
   display: inline;
   line-height: 0;
   margin-top: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 rp {
