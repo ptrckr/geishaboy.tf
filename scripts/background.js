@@ -15,9 +15,9 @@ c.height = height;
 // @@@ Geisha Collection
 const collection = [
   {% for series in page.series %}
-    [{% for effect in series.effects %}
+    {% for effect in series.effects %}
       {% effect.id %}{% if not forloop.last %},{% endif %}
-    {% endfor %}]{% if not forloop.last %},{% endif %}
+    {% endfor %}{% if not forloop.last %},{% endif %}
   {% endfor %}
 ];
 
