@@ -14,7 +14,7 @@ c.width = width;
 c.height = height;
 
 // @@@ Geisha Collection
-const collection = `{{ post.series | jsonify }}`;
+const collection = `{{ site.series | jsonify }}`;
 console.log(collection);
 
 // const collections = [
