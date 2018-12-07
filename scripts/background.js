@@ -1,3 +1,5 @@
+---
+---
 // @@@ Sizes
 const stamp_size = 230;
 const main_p_width = document.querySelector("main p").clientWidth;
