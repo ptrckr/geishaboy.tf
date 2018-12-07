@@ -373,7 +373,7 @@ c.width = width;
 c.height = height;
 
 // @@@ Geisha Collection
-const collection = "{{ page.series | jsonify }}";
+const collection = `{{ site.series | jsonify }}`;
 console.log(collection);
 
 // const collections = [
