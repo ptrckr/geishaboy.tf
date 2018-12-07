@@ -13,13 +13,8 @@ c.width = width;
 c.height = height;
 
 // @@@ Geisha Collection
-const collection = [
-  {% for series in page.series %}
-    {% for effect in series.effects %}
-      {% effect.id %}{% if not forloop.last %},{% endif %}
-    {% endfor %}{% if not forloop.last %},{% endif %}
-  {% endfor %}
-];
+const collection = {{ page.series | jsonify }};
+console.log(collection);
 
 // const collections = [
 //   [87, 88, 89, 90, 87, 88, 89, 90, 87, 88, 89, 90, 89, 90],
