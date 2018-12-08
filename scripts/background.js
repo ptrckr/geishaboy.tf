@@ -14,7 +14,7 @@ c.width = width;
 c.height = height;
 
 // @@@ Geisha Collection
-const collection = JSON.parse(`{{ site.series | jsonify }}`);
+const collections = JSON.parse(`{{ site.series | jsonify }}`);
 
 // @@@ Paint
 const angles_count = 16;
