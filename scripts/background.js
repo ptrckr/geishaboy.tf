@@ -27,7 +27,7 @@ const stamp = new Image();
 
 stamp.onload = () => {
   for (let collection = 0; collection < Math.min(collections.length, angles_count); ++collection) {
-    const current_collection = collections[collection].effects.map(x => x.id);
+    const current_collection = collections[collection].effects.filter(x => x.collected).map(x => x.id);
     console.log(current_collection);
     let angle = angles_to_paint.shift();
 
