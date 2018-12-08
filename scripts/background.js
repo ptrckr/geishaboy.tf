@@ -14,35 +14,7 @@ c.width = width;
 c.height = height;
 
 // @@@ Geisha Collection
-const collection = `{{ site.series | jsonify }}`;
-console.log(collection);
-
-// const collections = [
-//   [87, 88, 89, 90, 87, 88, 89, 90, 87, 88, 89, 90, 89, 90],
-//   [46, 69],
-//   [69],
-//   [87],
-//   [45],
-//   [46],
-//   [69],
-//   [87, 45],
-//   [45],
-//   [46],
-//   [69, 45, 45],
-//   [87],
-//   [46, 87],
-//   [69],
-//   [87, 87, 87],
-//   [45],
-//   [46],
-//   [69],
-//   [46],
-//   [69],
-//   [87],
-//   [45],
-//   [46],
-//   [69]
-// ];
+const collection = JSON.parse(`{{ site.series | jsonify }}`);
 
 // @@@ Paint
 const angles_count = 16;
@@ -55,7 +27,7 @@ const stamp = new Image();
 
 stamp.onload = () => {
   for (let collection = 0; collection < Math.min(collections.length, angles_count); ++collection) {
-    const current_collection = collections[collection];
+    const current_collection = collections[collection].effects.map(x => x.id);
     console.log(current_collection);
     let angle = angles_to_paint.shift();
 
