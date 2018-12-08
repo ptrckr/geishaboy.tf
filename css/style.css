@@ -104,7 +104,7 @@ header {
   width: 200px;
   height: 200px;
 
-  background: url(img/header/effect/darkblaze.png);
+  background: url(../img/header/effect/darkblaze.png);
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
