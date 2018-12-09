@@ -64,6 +64,8 @@ series:
       -
         id: 12,
         name: "Massed Flies"
+        collected: true
+        item_id: 383603588
   -
     name: "Gen II"
     effects:
@@ -103,6 +105,8 @@ series:
       -
         id: 31
         name: "Nuts n' Bolts"
+        collected: true
+        item_id: 1001721440
   -
     name: "Gen III"
     effects:
@@ -132,6 +136,8 @@ series:
       -
         id: 59
         name: "Aces High"
+        collected: true
+        item_id: 1927487388
       -
         id: 60
         name: "Dead Presidents"

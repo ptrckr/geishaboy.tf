@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* @@@ Reset @@@ */
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.sup {
+  font-size: 0.6em;
+  line-height: 1em;
+  vertical-align: super;
+}
+
+/* @@@ Variables @@@ */
+
+:root {
+  /* Body */
+  --body-width: 1000px;
+  --body-padding: 0;
+
+  /* Color */
+  --black: black;
+  --darker-gray: hsl(0, 0%, 15%);
+  --dark-gray: hsl(0, 0%, 30%);
+  --gray: hsl(0, 0%, 50%);
+  --light-gray: hsl(0, 0%, 80%);
+  --white: white;
+
+  --red: hsl(12, 78%, 79%);
+  --blue: hsl(222, 78%, 79%);
+
+  /* Font */
+  --font-size: 22px;
+  --font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+  --font-weight: 600;
+
+  --base-font: var(--font-weight) var(--font-size)/calc(var(--font-size) * 1.3636363636) var(--font-family);
+  --hero-font: var(--font-weight) calc(var(--font-size) * 2.7272727273)/calc(var(--font-size) * 2.7272727273) var(--font-family);
+  --sub-hero-font: var(--font-weight) calc(var(--font-size) * 1.55)/calc(var(--font-size) * 1.7272727273) var(--font-family);
+  --fine-print-font: var(--font-weight) calc(var(--font-size) * 0.6363636364)/calc(var(--font-size) * 0.8181818182) var(--font-family);
+}
+
+/* @@@ html/body @@@ */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: var(--black);
+  overflow: hidden;
+
+  cursor: default;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font: var(--base-font);
+}
+
+/* @@@ Main @@@ */
+
+main {
+  width: var(--body-width);
+  padding: 0 var(--body-padding);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+/* @@@ Header @@@ */
+
+header {
+  position: relative;
+  z-index: 43;
+
+  width: 120px;
+  height: 112px;
+
+  margin: 30px auto 0 auto;
+}
+
+.geisha-effect {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(calc(-50%  - 10px));
+
+  width: 200px;
+  height: 200px;
+
+  background: url(../img/header/effect/darkblaze.png);
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  z-index: -9;
+}
+
+/* @@@ Main Copy @@@ */
+
+main p {
+  position: relative;
+  font: var(--hero-font);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 0 50px 0;
+}
+
+/* @@@ Footer @@@ */
+
+footer {
+  font-size: 0;
+  white-space: no-wrap;
+}
+
+footer a {
+  font: var(--sub-hero-font);
+  margin: 0 1.5rem;
+  border-bottom: 2px solid var(--darker-gray);
+}
+
+footer a:first-child {
+  color: var(--blue);
+}
+
+footer a:first-child:hover {
+  border-bottom-color: var(--blue);
+}
+
+footer a:last-child {
+  color: var(--red);
+}
+
+footer a:last-child:hover {
+  border-bottom-color: var(--red);
+}
+
+/* @@@ Fine Print @@@ */
+
+.fine-print {
+  display: flex;
+
+  font: var(--fine-print-font);
+  color: var(--dark-gray);
+
+  text-align: center;
+  margin: 20px 0;
+}
+
+.fine-print a {
+  color: var(--gray);
+
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+/* @@@ Background Canvas @@@ */
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9;
+
+  background: linear-gradient(0deg, var(--black), #1f0133);
+}
+
+.background canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1) rotateY(0deg);
+  transition: all 250ms ease-in;
+}
+
+.canvas_loading {
+  opacity: 0;
+  transform: scale(.98) rotateY(10deg);
+}

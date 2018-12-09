@@ -1,15 +1,57 @@
 ---
-layout: default
-trade_link: "https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU"
 ---
+
 {% for series in site.series %}
   {% for geisha in series.effects %}
     {% if geisha.collected %}
-      {% increment total_geishas_collected %}
+      {% capture _ %}{% increment total_geishas_collected %}{% endcapture %}
     {% endif %}
 
     {% unless geisha.unknown %}
-      {% increment total_geishas_available %}
+      {% capture _ %}{% increment total_geishas_available %}{% endcapture %}
     {% endunless %}
   {% endfor %}
 {% endfor %}
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>GeishaBoy.tf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <script>
+      (function(d) {
+        var config = {
+          kitId: "zob0rxl",
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+  </head>
+  <body>
+    <div class="background">
+      <canvas class="canvas_loading"></canvas>
+    </div>
+    <main>
+      <header>
+        <img src="assets/img/header/geishaboy.png" />
+        <div class="geisha-effect"></div>
+      </header>
+      <p>I‘m collecting all unusual Geisha Boys ― The collection consists of {{ total_geishas_collected }} of {{ total_geishas_available }} available<span class="sup" title="Known to backpack.tf. More might exist but they have not yet been discovered.">※</span> Geishas, that's {{ 100.0 | divided_by: total_geishas_available | times: total_geishas_collected | round }}&#x2060;㌫, last updated on 2018-12-04。</p>
+      <footer>
+        <a href="https://backpack.tf/profiles/76561198060233163" target="backpack.tf">View the Collection</a>
+        <a href="https://backpack.tf/classifieds?item=Geisha%20Boy&steamid=76561198060233163" target="backpack.tf">Sell your Geisha Boy</a>
+      </footer>
+    </main>
+    <ul class="fine-print">
+      <li>Unusual particle images created by <a href="https://backpack.tf/developer/particles">backpack.tf</a>。</li>
+      <li><a href="https://geishaboy.tf">geishaboy.tf</a> is another addiction by <a href="http://ptrc.kr">ptrc.kr</a>。</li>
+    </ul>
+    <script src="/assets/js/background.js"></script>
+    <!-- <script src="/assets/js/generateSprite.js"></script> -->
+  </body>
+</html>
