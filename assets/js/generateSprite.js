@@ -11,8 +11,7 @@ const path = {
 
 const sprite_size = 230;
 const c = document.createElement("canvas");
-c.setAttribute("style", "position: absolute; left: 0; top: 0");
-document.documentElement.appendChild(c);
+document.body.appendChild(c);
 const ctx = c.getContext("2d");
 
 let sprite_count = 0;
