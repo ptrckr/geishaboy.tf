@@ -86,6 +86,9 @@ sprite.onload = () => {
 sprite.src = `assets/img/sprite.png`;
 
 const Paint = sprite => {
+  // Don't execute script if the screen resolution is to small
+  if (client_width < 1000 || client_height < 750) return;
+
   let index = 0;
   for (let collection = 0; collection < Math.min(collections.length, angles_count); ++collection) {
     let current_collection = collections[collection].effects.filter(x => x.collected).map(x => {
