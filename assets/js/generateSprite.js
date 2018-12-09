@@ -1,50 +1,49 @@
 ---
 ---
-{
-  const collections = JSON.parse(`{{ site.series | jsonify }}`);
 
-  // @@@ Paths
-  const path = {
-    screenshots: `assets/img/stamps/__ID__.jpg`,
-    bptf_fallback: `assets/img/particles/__ID__.png`
-  };
+const collections = JSON.parse(`{{ site.series | jsonify }}`);
 
-  const sprite_size = 230;
-  const c = document.createElement("canvas");
-  c.setAttribute("style", "position: absolute; left: 0; top: 0");
-  document.documentElement.appendChild(c);
-  const ctx = c.getContext("2d");
+// @@@ Paths
+const path = {
+  screenshots: `assets/img/stamps/__ID__.jpg`,
+  bptf_fallback: `assets/img/particles/__ID__.png`
+};
 
-  let sprite_count = 0;
-  collections.forEach(collection => {
-    collection.effects.filter(x => x.collected).forEach(effect => {
-      ++sprite_count;
-    })
-  });
+const sprite_size = 230;
+const c = document.createElement("canvas");
+c.setAttribute("style", "position: absolute; left: 0; top: 0");
+document.documentElement.appendChild(c);
+const ctx = c.getContext("2d");
 
-  c.width = sprite_size * sprite_count;
-  c.height = sprite_size;
+let sprite_count = 0;
+collections.forEach(collection => {
+  collection.effects.filter(x => x.collected).forEach(effect => {
+    ++sprite_count;
+  })
+});
 
-  let i = 0;
-  collections.forEach(collection => {
-    collection.effects.filter(x => x.collected).forEach(effect => {
-      const x = i++ * sprite_size;
-      const img = new Image();
+c.width = sprite_size * sprite_count;
+c.height = sprite_size;
 
-      img.onload = () => {
-        ctx.drawImage(img, x, 0, sprite_size, sprite_size);
-      };
+let i = 0;
+collections.forEach(collection => {
+  collection.effects.filter(x => x.collected).forEach(effect => {
+    const x = i++ * sprite_size;
+    const img = new Image();
 
-      img.onerror = () => {
-        if (effect.error) return;
+    img.onload = () => {
+      ctx.drawImage(img, x, 0, sprite_size, sprite_size);
+    };
 
-        const src = path.bptf_fallback.replace("__ID__", effect.id);
-        img.src = src;
+    img.onerror = () => {
+      if (effect.error) return;
 
-        effect.error = true;
-      }
+      const src = path.bptf_fallback.replace("__ID__", effect.id);
+      img.src = src;
 
-      img.src = path[effect.collected ? "screenshots" : "bptf_fallback"].replace("__ID__", effect.id);
-    })
-  });
-}
+      effect.error = true;
+    }
+
+    img.src = path[effect.collected ? "screenshots" : "bptf_fallback"].replace("__ID__", effect.id);
+  })
+});
