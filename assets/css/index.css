@@ -135,9 +135,9 @@ main p {
 
 @media (max-width: 1000px) {
   main p {
-    padding: 60px 20px 50px 20px;
-    font-size: 50px;
-    line-height: 50px;
+    padding: 50px 20px 40px 20px;
+    font-size: 26px;
+    line-height: 32px;
   }
 }
 
@@ -157,11 +157,11 @@ footer a {
 
 @media (max-width: 1000px) {
   footer a {
-    font-size: 24px;
+    font-size: 20px;
     background: #232323;
     border-radius: 3px;
-    padding: 0 20px 3px 20px;
-    margin: 5px 0;
+    padding: 2px 30px 3px 30px;
+    margin: 7px 10px;
     display: inline-block;
   }
 }
@@ -196,8 +196,13 @@ footer a:last-child:hover {
 
 @media (max-width: 1000px) {
   .fine-print {
-    flex-direction: column;
+    display: block;
+    padding: 0 20px;
     margin-top: 3rem;
+  }
+
+  .fine-print li {
+    display: inline;
   }
 }
 
