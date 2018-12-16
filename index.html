@@ -17,40 +17,38 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>GeishaBoy.tf</title>
+    <title>geishaboy.tf</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
-    <script>
-      (function(d) {
-        var config = {
-          kitId: "zob0rxl",
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
-    </script>
   </head>
   <body>
-    <div class="background">
-      <canvas class="canvas_loading"></canvas>
-    </div>
-    <main>
-      <header>
-        <img src="assets/img/header/geishaboy.png" />
-        <div class="geisha-effect"></div>
+    <main class="album">
+      <header class="notes">
+        <h1><span>芸</span><span>者</span><span>少</span><span>年</span></h1>
+        <p>I'm collecting all unusual Geisha Boys, the col&shy;lec&shy;tion consists of {{ total_geishas_collected }} of {{ total_geishas_available }} avail&shy;able<span class="sup" title="Known to backpack.tf. More might exist but they have not yet been discovered.">※</span> Geishas, that's {{ 100.0 | divided_by: total_geishas_available | times: total_geishas_collected | round }}&#x2060;㌫, last up&shy;dat&shy;ed on <span class="no-break">{{ "now" | date: "%Y-%m-%d" }}</span>。</p>
+        <nav>
+          <a href="https://steamcommunity.com/id/ptrckr/">Steam Profile</a>
+          <a href="https://backpack.tf/profiles/76561198060233163">Backpack.tf</a>
+          <a href="https://backpack.tf/classifieds?steamid=76561198060233163">Sell your Geisha Boy</a>
+        </nav>
       </header>
-      <p>I'm collecting all unusual Geisha Boys ― The col&shy;lec&shy;tion consists of {{ total_geishas_collected }} of {{ total_geishas_available }} avail&shy;able<span class="sup" title="Known to backpack.tf. More might exist but they have not yet been discovered.">※</span> Geishas, that's {{ 100.0 | divided_by: total_geishas_available | times: total_geishas_collected | round }}&#x2060;㌫, last up&shy;dat&shy;ed on 2018-12-04。</p>
-      <footer>
-        <a href="https://backpack.tf/profiles/76561198060233163" target="backpack.tf">View the Collection</a>
-        <a href="https://backpack.tf/classifieds?item=Geisha%20Boy&steamid=76561198060233163" target="backpack.tf">Sell your Geisha Boy</a>
-      </footer>
+      {% for series in site.series %}
+        {% for effect in series.effects %}
+          {% capture _ %}{% increment effect_index %}{% endcapture %}
+          <div class="effect {% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">
+            {% if effect.collected %}
+              <canvas class="stamp_{{ effect_index | minus: 1 }} hidden_canvas"></canvas>
+            {% endif %}
+            <span class="effect-name">{{ effect.name }}</span>
+          </div>
+        {% endfor %}
+      {% endfor %}
     </main>
-    <ul class="fine-print">
-      <li>Unusual particle images created by <a href="https://backpack.tf/developer/particles">backpack.tf</a>。</li>
-      <li><a href="https://geishaboy.tf">geishaboy.tf</a> is another addiction by <a href="http://ptrc.kr">ptrc.kr</a>。</li>
-    </ul>
+    <footer class="fine-print">
+      <span>Unusual particle images created by <a href="https://backpack.tf/developer/particles">backpack.tf</a>。</span>
+      <span><a href="https://geishaboy.tf">geishaboy.tf</a> is another addiction by <a href="http://ptrc.kr">ptrc.kr</a>。</span>
+    </footer>
     <script src="/assets/js/background.js"></script>
   </body>
 </html>

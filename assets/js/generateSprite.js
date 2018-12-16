@@ -9,14 +9,14 @@ const path = {
   bptf_fallback: `assets/img/particles/__ID__.png`
 };
 
-const sprite_size = 230;
+const sprite_size = {{ site.grid_size }};
 const c = document.createElement("canvas");
 document.body.appendChild(c);
 const ctx = c.getContext("2d");
 
 let sprite_count = 0;
 collections.forEach(collection => {
-  collection.effects.filter(x => x.collected).forEach(effect => {
+  collection.effects.forEach(effect => {
     ++sprite_count;
   })
 });
@@ -26,7 +26,7 @@ c.height = sprite_size;
 
 let i = 0;
 collections.forEach(collection => {
-  collection.effects.filter(x => x.collected).forEach(effect => {
+  collection.effects.forEach(effect => {
     const x = i++ * sprite_size;
     const img = new Image();
 

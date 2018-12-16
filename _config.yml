@@ -1,3 +1,4 @@
+grid_size: "200"
 series:
   -
     name: "Gen I"
