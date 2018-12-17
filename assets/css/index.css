@@ -221,7 +221,8 @@ footer.fine-print a {
     --stamp-size: 100%;
 
     /* Font */
-    --font-size: 10px;
+    --font-size: 12px;
+    --hero-font: var(--font-weight-serif) calc(var(--font-size) * 2)/calc(var(--font-size) * 2.6) var(--font-serif);
 
     /* Grid */
     --grid-template-columns: repeat(3, 1fr);
@@ -238,7 +239,7 @@ footer.fine-print a {
   }
 
   header.notes {
-    padding: 40px 20px 60px;
+    padding: 50px 20px;
   }
 
   nav a {
@@ -247,6 +248,10 @@ footer.fine-print a {
 
   .effect {
     padding-bottom: 100%;
+  }
+
+  footer.fine-print {
+    padding: 50px 20px;
   }
 }
 

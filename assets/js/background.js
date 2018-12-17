@@ -89,4 +89,6 @@ sprite.onload = () => {
   }
 }
 
-sprite.src = "assets/img/sprite.png";
+document.onreadystatechange = () => {
+	sprite.src = "assets/img/sprite.png";
+}
