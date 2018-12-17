@@ -36,6 +36,9 @@ const CreateStampPath = (ctx, x, y, w, h, teeth_count) => {
 
 // ——— Sizes ———
 const stamp_size = {{ site.grid_size }};
+const stamp_padding = 18;
+const padded_stamp_size = stamp_size - stamp_padding;
+const clip_radius = 4;
 
 // ——— Geisha Collection ———
 const collections = JSON.parse(`{{ site.series | jsonify }}`);
@@ -71,15 +74,24 @@ sprite.onload = () => {
       ctx.fillStyle = "white";
       ctx.fill();
 
-      /* Inner Background */
-      ctx.fillStyle = "#8650AC";
-      ctx.fillRect(18, 18, stamp_size - 36, stamp_size - 36);
+			/* Clip */
+			ctx.beginPath();
+			ctx.moveTo(stamp_padding, stamp_padding + clip_radius);
+			ctx.arcTo(stamp_padding, stamp_padding, stamp_padding + clip_radius, stamp_padding, clip_radius);
+			ctx.lineTo(padded_stamp_size - clip_radius, stamp_padding);
+			ctx.arcTo(padded_stamp_size, stamp_padding, padded_stamp_size, stamp_padding + clip_radius, clip_radius);
+			ctx.lineTo(padded_stamp_size, padded_stamp_size - clip_radius);
+			ctx.arcTo(padded_stamp_size, padded_stamp_size, padded_stamp_size - clip_radius, padded_stamp_size, clip_radius);
+			ctx.lineTo(stamp_padding + clip_radius, padded_stamp_size);
+			ctx.arcTo(stamp_padding, padded_stamp_size, stamp_padding, padded_stamp_size - clip_radius, clip_radius);
+			ctx.closePath();
+			ctx.clip();
 
       /* Effect Image */
       ctx.drawImage(
         sprite,
         stamp_size * effect.index, 0, stamp_size, stamp_size,
-        18, 18, stamp_size - 36, stamp_size - 36
+        stamp_padding, stamp_padding, stamp_size - stamp_padding * 2, stamp_size - stamp_padding * 2
       );
 
       setTimeout(() => {
@@ -90,5 +102,5 @@ sprite.onload = () => {
 }
 
 document.onreadystatechange = () => {
-	sprite.src = "assets/img/sprite.png";
+	sprite.src = "assets/img/sprite.jpg";
 }

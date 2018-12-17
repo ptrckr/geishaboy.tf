@@ -1,9 +1,10 @@
 ---
 ---
 
+// ——— Geisha Collection ———
 const collections = JSON.parse(`{{ site.series | jsonify }}`);
 
-// @@@ Paths
+// ——— Paths ———
 const path = {
   screenshots: `assets/img/stamps/__ID__.jpg`,
   bptf_fallback: `assets/img/particles/__ID__.png`
@@ -23,6 +24,10 @@ collections.forEach(collection => {
 
 c.width = sprite_size * sprite_count;
 c.height = sprite_size;
+
+/* Draw Background */
+ctx.fillStyle = "#8650AC";
+ctx.fillRect(0, 0, c.width, c.height);
 
 let i = 0;
 collections.forEach(collection => {
