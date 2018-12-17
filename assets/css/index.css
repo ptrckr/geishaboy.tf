@@ -197,9 +197,9 @@ footer.fine-print {
   display: flex;
   font: var(--fine-print-font);
   color: var(--dark-gray);
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
 }
 

@@ -36,7 +36,7 @@
       {% for series in site.series %}
         {% for effect in series.effects %}
           {% capture _ %}{% increment effect_index %}{% endcapture %}
-          <div class="effect {% unless effect.collected %}missing{% endunless %} {% if effect.unknown %}unknown{% endif %}">
+          <div class="effect{% unless effect.collected %} missing{% endunless %}{% if effect.unknown %} unknown{% endif %}">
             {% if effect.collected %}
               <canvas class="stamp_{{ effect_index | minus: 1 }} hidden_canvas"></canvas>
             {% endif %}
