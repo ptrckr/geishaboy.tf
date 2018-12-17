@@ -33,6 +33,7 @@ series:
         name: "Green Energy"
         collected: true
         item_id: 281221108
+        duped: true
       -
         id: 15
         name: "Searing Plasma"
@@ -47,6 +48,9 @@ series:
       -
         id: 11
         name: "Circling TF Logo"
+        collected: true
+        item_id: 309667579
+        duped: true
       -
         id: 19
         name: "Circling Heart"
@@ -78,6 +82,8 @@ series:
       -
         id: 29
         name: "Stormy Storm"
+        collected: true
+        item_id: 1121266129
       -
         id: 36
         name: "Steaming"
