@@ -252,6 +252,7 @@ footer.fine-print a {
 
   footer.fine-print {
     padding: 50px 20px;
+    flex-direction: column;
   }
 }
 
