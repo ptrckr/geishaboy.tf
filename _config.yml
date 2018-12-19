@@ -37,6 +37,8 @@ series:
       -
         id: 15
         name: "Searing Plasma"
+        collected: true
+        item_id: 334874778
       -
         id: 16
         name: "Vivid Plasma"
