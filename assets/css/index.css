@@ -186,7 +186,7 @@ nav a:hover {
   padding: 40px;
   text-align: center;
   z-index: 9;
-  border: 2px dashed #212325;
+  border: 2px dashed var(--darker-gray);
   border-radius: 10px;
 }
 
