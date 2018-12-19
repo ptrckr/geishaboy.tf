@@ -34,15 +34,14 @@ a {
   --stamp-size: {{ site.grid_size }}px;
 
   /* Color */
-  --black: black;
-  --darker-gray: hsl(0, 0%, 15%);
-  --dark-gray: hsl(0, 0%, 30%);
-  --gray: hsl(0, 0%, 50%);
-  --light-gray: hsl(0, 0%, 80%);
-  --white: white;
+  --black:       hsl(38, 8%, 20%);
+  --darker-gray: hsl(38, 8%, 35%);
+  --dark-gray:   hsl(38, 8%, 60%);
+  --gray:        hsl(38, 8%, 70%);
+  --white:       hsl(38, 8%, 85%);
 
-  --red: hsl(12, 78%, 79%);
-  --blue: hsl(222, 78%, 79%);
+  --red:         hsl(12, 78%, 79%);
+  --blue:        hsl(222, 78%, 79%);
 
   /* Font */
   --font-size: 16px;
