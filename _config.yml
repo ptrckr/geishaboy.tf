@@ -18,6 +18,7 @@ series:
         name: "Purple Confetti"
         collected: true
         item_id: 364908286
+        duped: true
       -
         id: 6
         name: "Green Confetti"
@@ -73,6 +74,7 @@ series:
         name: "Massed Flies"
         collected: true
         item_id: 383603588
+        duped: true
   -
     name: "Gen II"
     effects:
@@ -81,6 +83,7 @@ series:
         name: "Blizzardy Storm"
         collected: true
         item_id: 505671006
+        duped: true
       -
         id: 29
         name: "Stormy Storm"
