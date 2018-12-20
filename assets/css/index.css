@@ -140,6 +140,7 @@ nav a {
 
   box-shadow: 3px 3px 0 0 var(--white);
   border: 2px solid var(--white);
+  border-radius: 2px;
   transition: all 125ms ease-in;
 }
 
