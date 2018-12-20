@@ -215,7 +215,7 @@ footer.fine-print a {
 /* ——— Media Query Overwrites ——— */
 
 /* Mobile */
-@media (max-width: 1320px) {
+@media (max-width: 1000px) {
   :root {
     /* Stamp */
     --stamp-size: 100%;
@@ -253,6 +253,39 @@ footer.fine-print a {
   footer.fine-print {
     padding: 50px 20px;
     flex-direction: column;
+  }
+}
+
+/* Tablet */
+@media (min-width: 1000px) {
+  :root {
+    /* Stamp */
+    --stamp-size: 100%;
+
+    /* Grid */
+    --grid-template-columns: repeat(5, 1fr);
+    --grid-template-rows: auto;
+
+    --row-gap: 30px;
+    --column-gap: 30px;
+    --grid-outer-padding: 30px;
+
+    --grid-column-start: 1;
+    --grid-column-end: 6;
+    --grid-row-start: 1;
+    --grid-row-end: 2;
+  }
+
+  header.notes {
+    padding: 30px 20px 50px 20px;
+  }
+
+  .effect {
+    padding-bottom: 100%;
+  }
+
+  footer.fine-print {
+    padding: 50px 20px;
   }
 }
 
