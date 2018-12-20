@@ -43,10 +43,27 @@ const clip_radius = 4;
 // ——— Geisha Collection ———
 const collections = JSON.parse(`{{ site.series | jsonify }}`);
 
-// ——— Paint ———
-const sprite = new Image();
+// ——— Preload Images ———
+const Preload = (images, callback) => {
+	let loaded = 0;
 
-sprite.onload = () => {
+	Object.keys(images).forEach(img => {
+		const image = new Image();
+		images[img].img = image;
+
+		image.onload = () => {
+			console.log(loaded, Object.keys(images).length);
+			if (++loaded == Object.keys(images).length) {
+				callback(images);
+			}
+		}
+
+		image.src = images[img].src;
+	})
+}
+
+// ——— Paint ———
+const Paint = images => {
   let index = 0;
 
   for (let collection = 0; collection < collections.length; ++collection) {
@@ -69,12 +86,16 @@ sprite.onload = () => {
       canvas.width = stamp_size;
       canvas.height = stamp_size;
 
-      /* Stamp */
+      // Stamp
       CreateStampPath(ctx, 0, 0, stamp_size, stamp_size, 10);
       ctx.fillStyle = "white";
       ctx.fill();
 
-			/* Clip */
+			// Clip and save stamp path
+			ctx.clip();
+			ctx.save();
+
+			// Clip image area
 			ctx.beginPath();
 			ctx.moveTo(stamp_padding, stamp_padding + clip_radius);
 			ctx.arcTo(stamp_padding, stamp_padding, stamp_padding + clip_radius, stamp_padding, clip_radius);
@@ -87,12 +108,24 @@ sprite.onload = () => {
 			ctx.closePath();
 			ctx.clip();
 
-      /* Effect Image */
+      // Effect Image
       ctx.drawImage(
-        sprite,
+        images.sprite.img,
         stamp_size * effect.index, 0, stamp_size, stamp_size,
         stamp_padding, stamp_padding, stamp_size - stamp_padding * 2, stamp_size - stamp_padding * 2
       );
+
+			// Restore stamp clip path
+			ctx.restore();
+
+			// Draw blood splatter if item is duped
+			if (effect.duped) {
+				ctx.globalCompositeOperation = "multiply";
+				ctx.drawImage(
+					images.blood.img,
+					0, 0, stamp_size, stamp_size
+				);
+			}
 
       setTimeout(() => {
         canvas.classList.remove("hidden_canvas");
@@ -101,6 +134,12 @@ sprite.onload = () => {
   }
 }
 
-document.onreadystatechange = () => {
-	sprite.src = "assets/img/sprite.jpg";
-}
+// ——— Init ———
+Preload({
+	sprite: {
+		src: "assets/img/sprite.jpg"
+	},
+	blood: {
+		src: "assets/img/blood_splatter/splatter.png"
+	}
+}, Paint);
