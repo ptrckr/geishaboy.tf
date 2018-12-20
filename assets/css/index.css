@@ -257,7 +257,7 @@ footer.fine-print a {
 }
 
 /* Tablet */
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (max-width: 1320px) {
   :root {
     /* Stamp */
     --stamp-size: 100%;
