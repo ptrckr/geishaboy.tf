@@ -66,6 +66,7 @@ const Paint = images => {
   let index = 0;
 
   for (let collection = 0; collection < collections.length; ++collection) {
+		let current_color = collections[collection].color;
     let current_collection = collections[collection].effects.map(x => {
       x.index = index++;
       return x;
@@ -125,6 +126,12 @@ const Paint = images => {
 					0, 0, stamp_size, stamp_size
 				);
 			}
+
+			// Collection indication
+			// ctx.fillStyle = current_color;
+			// ctx.translate(stamp_size, 0);
+			// ctx.rotate(45 * Math.PI / 180);
+			// ctx.fillRect(stamp_padding / -2, stamp_padding / -2, stamp_padding, stamp_padding);
 
       setTimeout(() => {
         canvas.classList.remove("hidden_canvas");

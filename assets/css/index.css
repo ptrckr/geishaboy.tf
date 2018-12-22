@@ -67,13 +67,15 @@ html, body {
 }
 
 html {
-  background: var(--black);
   cursor: default;
+  background: url(/assets/img/geishaboy/transparent.png), var(--black);
+  background-position: center top;
+  background-attachment: fixed;
 }
 
 /* ——— Main ——— */
 
-main.album {
+.album {
   display: grid;
   justify-content: center;
   grid-template-columns: var(--grid-template-columns);
@@ -82,24 +84,15 @@ main.album {
   column-gap: var(--column-gap);
 
   padding: var(--grid-outer-padding);
-
-  background: var(--black);
 }
 
 /* ——— Notes ——— */
 
 header.notes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  grid-column-start: var(--grid-column-start);
-  grid-column-end: var(--grid-column-end);
-  grid-row-start: var(--grid-row-start);
-  grid-row-end: var(--grid-row-end);
-
-  padding: 0 60px;
   text-align: center;
+  margin: 0 auto;
+  padding-top: var(--grid-outer-padding);
+  max-width: 710px;
 }
 
 h1 {
@@ -123,7 +116,7 @@ header p {
 nav {
   font-size: 0;
   margin-top: 50px;
-  margin-bottom: -20px;
+  margin-bottom: -15px;
 }
 
 nav a {
@@ -133,21 +126,19 @@ nav a {
   left: 0;
 
   padding: 10px 30px 11px 30px;
-  margin: 0 14px 20px 14px;
+  margin: 0 14px 15px 14px;
 
   font: var(--sans-serif-font);
   color: var(--white);
+  background: var(--darker-gray);
 
-  box-shadow: 3px 3px 0 0 var(--white);
-  border: 2px solid var(--white);
   border-radius: 2px;
   transition: all 125ms ease-in;
 }
 
 nav a:hover {
-  top: 3px;
-  left: 3px;
-  box-shadow: 0 0 0 0 var(--white);
+  background: var(--white);
+  color: var(--black);
 }
 
 /* ——— Stamps ——— */
@@ -171,6 +162,11 @@ nav a:hover {
   height: 100%;
   z-index: 43;
   transition: all 350ms ease-in;
+}
+
+.effect canvas:hover {
+  transform: rotate(0) scale(1.1) !important;
+  transition: all 125ms ease-in;
 }
 
 .effect-name {
@@ -231,15 +227,14 @@ footer.fine-print a {
     --row-gap: 10px;
     --column-gap: 10px;
     --grid-outer-padding: 10px;
-
-    --grid-column-start: 1;
-    --grid-column-end: 4;
-    --grid-row-start: 1;
-    --grid-row-end: 2;
   }
 
   header.notes {
-    padding: 50px 20px;
+    padding:
+      calc(var(--grid-outer-padding) * 4)
+      calc(var(--grid-outer-padding) * 3)
+      calc(var(--grid-outer-padding) * 3)
+      calc(var(--grid-outer-padding) * 4);
   }
 
   nav a {
@@ -269,15 +264,11 @@ footer.fine-print a {
     --row-gap: 30px;
     --column-gap: 30px;
     --grid-outer-padding: 30px;
-
-    --grid-column-start: 1;
-    --grid-column-end: 6;
-    --grid-row-start: 1;
-    --grid-row-end: 2;
   }
 
   header.notes {
-    padding: 30px 20px 50px 20px;
+    padding-top: calc(var(--grid-outer-padding) * 3);
+    padding-bottom: calc(var(--grid-outer-padding) * 2);
   }
 
   .effect {
@@ -298,55 +289,5 @@ footer.fine-print a {
     --row-gap: 30px;
     --column-gap: 30px;
     --grid-outer-padding: 100px;
-
-    --grid-column-start: 2;
-    --grid-column-end: 5;
-    --grid-row-start: 2;
-    --grid-row-end: 5;
-  }
-}
-
-@media (min-width: 1550px) {
-  :root {
-    --grid-column-start: 2;
-    --grid-column-end: 6;
-    --grid-row-start: 2;
-    --grid-row-end: 4;
-  }
-}
-
-@media (min-width: 1780px) {
-  :root {
-    --grid-column-start: 2;
-    --grid-column-end: 7;
-    --grid-row-start: 2;
-    --grid-row-end: 4;
-  }
-}
-
-@media (min-width: 2010px) {
-  :root {
-    --grid-column-start: 3;
-    --grid-column-end: 7;
-    --grid-row-start: 2;
-    --grid-row-end: 4;
-  }
-}
-
-@media (min-width: 2240px) {
-  :root {
-    --grid-column-start: 3;
-    --grid-column-end: 8;
-    --grid-row-start: 2;
-    --grid-row-end: 4;
-  }
-}
-
-@media (min-width: 2470px) {
-  :root {
-    --grid-column-start: 4;
-    --grid-column-end: 8;
-    --grid-row-start: 2;
-    --grid-row-end: 4;
   }
 }
