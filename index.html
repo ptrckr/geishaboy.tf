@@ -1,7 +1,7 @@
 ---
 ---
 
-{% for series in site.series %}
+{% for series in site.data.collection.series %}
   {% for geisha in series.effects %}
     {% if geisha.collected %}
       {% capture _ %}{% increment total_geishas_collected %}{% endcapture %}
@@ -33,7 +33,7 @@
           <a href="https://backpack.tf/classifieds?steamid=76561198060233163">Sell your Geisha Boy</a>
         </nav>
       </header>
-      {% for series in site.series %}
+      {% for series in site.data.collection.series %}
         {% for effect in series.effects %}
           {% capture _ %}{% increment effect_index %}{% endcapture %}
           <div class="effect{% unless effect.collected %} missing{% endunless %}{% if effect.unknown %} unknown{% endif %}">

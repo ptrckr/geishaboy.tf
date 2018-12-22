@@ -2,7 +2,7 @@
 ---
 
 // ——— Geisha Collection ———
-const collections = JSON.parse(`{{ site.series | jsonify }}`);
+const collections = JSON.parse(`{{ site.data.collection.series | jsonify }}`);
 
 // ——— Paths ———
 const path = {

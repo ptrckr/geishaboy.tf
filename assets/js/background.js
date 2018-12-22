@@ -41,7 +41,7 @@ const padded_stamp_size = stamp_size - stamp_padding;
 const clip_radius = 4;
 
 // ——— Geisha Collection ———
-const collections = JSON.parse(`{{ site.series | jsonify }}`);
+const collections = JSON.parse(`{{ site.data.collection.series | jsonify }}`);
 
 // ——— Preload Images ———
 const Preload = (images, callback) => {
@@ -52,7 +52,6 @@ const Preload = (images, callback) => {
 		images[img].img = image;
 
 		image.onload = () => {
-			console.log(loaded, Object.keys(images).length);
 			if (++loaded == Object.keys(images).length) {
 				callback(images);
 			}
