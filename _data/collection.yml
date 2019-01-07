@@ -193,6 +193,8 @@ series:
         id: 43
         name: "Knifestorm"
         price: "205"
+        collected: true
+        item_id: 1196236313
       -
         id: 47
         name: "Stormy 13th Hour"
