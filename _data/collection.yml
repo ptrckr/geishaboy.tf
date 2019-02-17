@@ -42,6 +42,8 @@ series:
       -
         id: 16
         name: "Vivid Plasma"
+        collected: true
+        item_id: 461197764
       -
         id: 18
         name: "Circling Peace Sign"
