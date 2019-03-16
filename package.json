@@ -1,0 +1,25 @@
+{
+  "name": "geishaboy.tf",
+  "version": "1.0.0",
+  "description": "A website to keep track of my collection of Geisha Boys from TF2.",
+  "scripts": {
+    "build": "grunt static_build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptrckr/geishaboy.tf.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "ptrc.kr",
+  "license": "MIT",
+  "homepage": "https://geishaboy.tf",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-pug": "^2.0.0",
+    "pug": "^2.0.3"
+  }
+}

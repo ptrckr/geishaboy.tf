@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    link(rel="stylesheet" href="https://use.typekit.net/lyf1waj.css")
+    link(rel="stylesheet" href="style.css")
+    link(rel="icon" type="image/png" href="favicon.png" sizes="32x32")
+    title Geishaboy.tf
+  body
+    header.bright
+      .container
+        .flag.lineheight_reset
+          .dot
+          img(src="img/header.jpg")
+        h1 All unusual Geisha Boys united at one place.
+        span.intro #[a(href=url.profile) ptrc.kr] is collecting all unusual Geisha Boys. The col­lec­tion consists of #{geishas.collected} of #{geishas.total} avail­able* Geishas, missing Geishas will be bought above market value.
+        span.note *Known to #[a(href="https://backpack.tf/unusual/Geisha%20Boy") backpack.tf] as of now.
+    main.dark
+      .container
+        h2 The Collection
+        ul.collection
+          - for (let i = 0; i < series.length; ++i)
+            - for (let j = 0; j < series[i].effects.length; ++j)
+              - const geisha = series[i].effects[j];
+                if geisha.collected
+                  li(style=`background-image:url(img/particles/${geisha.id}.png)` data-effect=geisha.name)
+                    a(href=`https://backpack.tf/item/${geisha.item_id}`)
+    if currently_buying_geishas
+      div.buying.dark
+        .container
+          h2.with_text Missing Geishas
+          span I‘m buying the following Geishas, #[a(href=url.profile) add me on steam] or #[a(href=url.trade) send a trade offer] if you‘re looking to sell yours. Prices are negotiable.
+          ul.missing
+            - for (let i = 0; i < series.length; ++i)
+              - for (let j = 0; j < series[i].effects.length; ++j)
+                - const geisha = series[i].effects[j];
+                  if geisha.price
+                    li(style=`background-image:url(img/particles/${geisha.id}.png)`)
+                      h3= geisha.name
+                      span.price= `${geisha.price} Keys (~$${Math.floor(geisha.price * key_price)})`
+          span.note Dollar prices can be paid via #[a(href=url.scm) Steam Community Market], #[a(href="https://marketplace.tf") Marketplace.tf] or PayPal (if you go first).
+    footer
+      .container
+        nav
+          a(href="https://ptrc.kr") ptrc.kr
+          span @
+          a(href=url.backpack) Backpack.tf
+          span &amp;
+          a(href=url.profile) Steam
+        blockquote „Frog leaps into pond#[br]Lotus blossoms fall to earth#[br]Medic has girl's hair“
+        ul.credits
+          li #[a(href="https://geishaboy.tf") geishaboy.tf] is maintained by #[a(href="https://ptrc.kr") ptrc.kr].
+          li Unusual particle images created by #[a(href="https://backpack.tf/developer/particles") backpack.tf].
+          li Last up­dat­ed on #{(new Date()).toUTCString()}.

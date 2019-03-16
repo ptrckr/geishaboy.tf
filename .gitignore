@@ -1,6 +1,2 @@
-_site
-.sass-cache
-.jekyll-metadata
-
-# macOs
+node_modules
 *.DS_Store
