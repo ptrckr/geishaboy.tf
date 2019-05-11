@@ -1,6 +1,6 @@
 {
   "name": "geishaboy.tf",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A website to keep track of my collection of Geisha Boys from TF2.",
   "scripts": {
     "build": "grunt static_build"

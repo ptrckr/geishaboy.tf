@@ -7,7 +7,7 @@ const config = {
       files: [{
         expand: true,
         cwd: source_dir,
-        src: ["CNAME", "img/**", "favicon.png"],
+        src: ["CNAME", "img/**", "fonts/**", "js/**", "favicon.png"],
         dest: dest_dir
       }]
     }
@@ -39,8 +39,9 @@ const config = {
             url: {
               backpack: "https://backpack.tf/profiles/76561198060233163",
               scm: "https://steamcommunity.com/market/listings/440/Unusual%20Geisha%20Boy",
-              profile: "https://steamcommunity.com/id/ptrckr",
-              trade: "https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU"
+              steam: "https://steamcommunity.com/id/ptrckr",
+              trade: "https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU",
+              bp_credit: "https://backpack.tf/developer/particles"
             },
             key_price: 1.80,
             series: collection.series,
@@ -49,7 +50,7 @@ const config = {
               collected: collection.series.reduce((a, s) =>
                 a += s.effects.filter(effect => effect.collected).length, 0),
               total: collection.series.reduce((a, s) =>
-                a += s.effects.filter(effect => !effect.unknown).length, 0)
+                a += s.effects.length, 0)
             }
           };
         }

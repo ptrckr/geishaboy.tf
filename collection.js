@@ -149,7 +149,8 @@ collection.series = [
       }, {
         id: 58,
         name: "Cloud 9",
-        price: 50
+        collected: true,
+        item_id: 5579525638
       }, {
         id: 59,
         name: "Aces High",
