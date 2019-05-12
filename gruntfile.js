@@ -43,7 +43,7 @@ const config = {
               trade: "https://steamcommunity.com/tradeoffer/new/?partner=99967435&token=eCs5JlvU",
               bp_credit: "https://backpack.tf/developer/particles"
             },
-            key_price: 1.80,
+            key_price_eu: 1.60,
             series: collection.series,
             currently_buying_geishas: false,
             geishas: {

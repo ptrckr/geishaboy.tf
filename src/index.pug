@@ -26,14 +26,14 @@ html
           ol
             each pos in ["tl", "tr", "bl", "br"]
               li(class=`cross_${pos}`)
-    main
+    main(data-key-to-euro-conversion=key_price_eu)
       - for (let i = 0; i < series.length; ++i)
         - for (let j = 0; j < series[i].effects.length; ++j)
           - const geisha = series[i].effects[j];
             li(class=`${geisha.collected ? "" : "missing"}`
                style=`background-image:url(img/particles/${geisha.id}.png)`
                data-effect=geisha.name data-series=series[i].name
-               data-buying-price=`${geisha.price ? geisha.price * key_price : "0"}`)
+               data-buying-price=`${geisha.price ? geisha.price : "0"}`)
               a(href=`https://backpack.tf/item/${geisha.item_id}`)
     footer
       span.series

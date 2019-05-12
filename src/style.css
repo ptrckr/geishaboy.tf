@@ -33,8 +33,13 @@ li {
 /* Base */
 
 @font-face { 
-  font-family: "TF2"; 
-  src: url("./fonts/tf2.ttf"); 
+  font-family: "TF2 Build"; 
+  src: url("./fonts/tf2_build.ttf"); 
+}
+
+@font-face { 
+  font-family: "TF2 Regular"; 
+  src: url("./fonts/tf2_regular.ttf"); 
 }
 
 html {
@@ -100,7 +105,7 @@ h1 {
 /* Progress Bar */
 
 h2 {
-  font-family: "TF2";
+  font-family: "TF2 Build";
   font-size: 25px;
   letter-spacing: .1em;
   height: 40px;
@@ -110,7 +115,7 @@ h2 {
 
 .progress_bar {
   position: relative;
-  width: 300px;
+  width: 400px;
   border: 1px solid var(--light-purple-a50);
   height: 20px;
   margin: 10px 0;
@@ -145,7 +150,7 @@ h2 {
 nav {
   display: flex;
   justify-content: flex-end;
-  font-family: TF2;
+  font-family: "TF2 Build";
 }
 
 nav > :not(:first-child) {
@@ -155,7 +160,7 @@ nav > :not(:first-child) {
 /* Buttons */
 
 [class$="button"] {
-  font-family: "TF2";
+  font-family: "TF2 Build";
   position: relative;
   box-shadow: inset 0 0 0 1px var(--light-purple-a50);
   color: white;
@@ -224,8 +229,7 @@ main li {
 }
 
 main li:hover {
-  box-shadow: inset 0 0 0 1px var(--light-purple);
-  transform: scale(1.05);
+  box-shadow: inset 0 0 0 3px var(--light-purple);
 }
 
 main .missing a {
@@ -281,7 +285,7 @@ main li a {
 footer {
   flex-shrink: 0;
   height: 160px;
-  font-family: "TF2";
+  font-family: "TF2 Build";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,7 +311,8 @@ footer.missing .effect {
 }
 
 footer.missing .effect::after {
-  content: "Missing! Buying for $" attr(data-buying-price);
+  font-family: "TF2 Regular";
+  content: "Missing! Buying for " attr(data-buying-price) " Keys (€" attr(data-buying-price-euro) ",—)" ;
   background: var(--red);
   color: #000;
   font-size: 0.8em;
@@ -334,7 +339,7 @@ footer.missing .effect::after {
   color: hsl(277, 4%, 40%);
   bottom: 10px;
   padding: 10px 15px;
-  font-family: "TF2";
+  font-family: "TF2 Build";
   font-size: 0.8em;
   line-height: .8em;
   white-space: pre;

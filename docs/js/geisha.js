@@ -1,4 +1,5 @@
 const main = document.querySelector("main");
+const key_to_euro_conversion = main.dataset.keyToEuroConversion;
 const footer = document.querySelector("footer");
 const series = document.querySelector(".series");
 const effect = document.querySelector(".effect");
@@ -77,9 +78,8 @@ main.addEventListener("mouseenter", e => {
 
 		if (e.target.classList.contains("missing")) {
 			footer.classList.add("missing");
-
-			if (e.target.dataset.buyingPrice)
-				footer.querySelector(".effect").dataset.buyingPrice = e.target.dataset.buyingPrice;
+			footer.querySelector(".effect").dataset.buyingPrice = e.target.dataset.buyingPrice;
+			footer.querySelector(".effect").dataset.buyingPriceEuro = e.target.dataset.buyingPrice * key_to_euro_conversion;
 		} else {
 			footer.classList.remove("missing");
 		}
