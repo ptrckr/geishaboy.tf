@@ -34,7 +34,7 @@ li {
 
 @font-face { 
   font-family: "TF2"; 
-  src: url("fonts/TF2.ttf"); 
+  src: url("./fonts/TF2.ttf"); 
 }
 
 html {
