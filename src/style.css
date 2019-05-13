@@ -62,6 +62,7 @@ body {
   --light-purple: hsl(277, 11%, 57%);
   --light-purple-a50: hsla(277, 11%, 57%, .5);
   --red: hsl(359, 83%, 59%);
+  --header-height: 160px;
 }
 
 /* Header */
@@ -70,7 +71,7 @@ header {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  height: 160px;
+  height: var(--header-height);
   padding: 0 80px;
 }
 
@@ -205,14 +206,19 @@ nav > :not(:first-child) {
 
 /* Main */
 
+:root {
+  --grid-gap: 10px;
+}
+
 main {
   margin: 0 80px;
   display: grid;
   grid-template-columns: repeat(14, auto);
   grid-template-rows: repeat(5, auto);
-  grid-gap: 10px;
+  grid-gap: var(--grid-gap);
   flex-grow: 1;
-  overflow: show;
+  overflow: visible;
+  height: calc(100% - var(--header-height) * 2);
 }
 
 main.smooth {
@@ -284,7 +290,7 @@ main li a {
 
 footer {
   flex-shrink: 0;
-  height: 160px;
+  height: var(--header-height);
   font-family: "TF2 Build";
   display: flex;
   justify-content: center;
