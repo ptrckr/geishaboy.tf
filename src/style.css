@@ -332,19 +332,48 @@ footer.missing .effect::after {
 .credit {
   position: absolute;
   left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 0 1px var(--light-purple-a50);
-  color: hsl(277, 4%, 40%);
-  bottom: 10px;
-  padding: 10px 15px;
-  font-family: "TF2 Build";
-  font-size: 0.8em;
+  color: var(--light-purple);
+  bottom: 0px;
+  font-size: .8em;
   line-height: .8em;
-  white-space: pre;
+  padding: 10px 20px;
+  border-top-right-radius: 5px;
+  background: var(--light-purple-a50);
+  border-top-left-radius: 5px;
 }
 
 .credit a {
   color: inherit;
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (max-height: 768px) {
+  html {
+    font-size: 10px;
+  }
+
+  header {
+    padding: 0 60px;
+  }
+
+  nav > :not(:first-child) {
+    margin-left: 20px;
+  }
+
+  .large_button {
+    height: 30px;
+    padding: 0 15px;
+  }
+
+  .progress_bar {
+    width: 250px;
+  }
+
+  main {
+    margin: 0 40px 40px;
+  }
+
+  footer {
+    display: none;
+  }
 }
